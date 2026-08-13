@@ -1,32 +1,40 @@
 <script setup lang="ts">
-import { brand, nav, waLink, type NavItem } from '~/config/site'
+import { brand, nav, waLink, type NavItem } from "~/config/site";
 
-const route = useRoute()
-const menuOpen = ref(false)
+const route = useRoute();
+const menuOpen = ref(false);
 
 function isActive(item: NavItem): boolean {
-  return route.path === item.to
+  return route.path === item.to;
 }
 
 watch(
   () => route.path,
   () => {
-    menuOpen.value = false
-  }
-)
+    menuOpen.value = false;
+  },
+);
 </script>
 
 <template>
   <header
     class="sticky top-0 z-50 border-b border-outline-soft bg-surface-translucent backdrop-blur-md"
   >
-    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-      <NuxtLink to="/" class="flex items-baseline gap-1.5 text-lg font-bold tracking-tight">
-        <span class="text-on-surface">{{ brand.name.split(' ')[0] }}</span>
-        <span class="text-primary-strong">{{ brand.name.split(' ').slice(1).join(' ') }}</span>
+    <div
+      class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
+    >
+      <NuxtLink to="/" class="flex items-center gap-2">
+        <img
+          :src="brand.logo"
+          :alt="brand.name"
+          class="h-8 w-auto object-contain"
+        />
       </NuxtLink>
 
-      <nav class="hidden items-center gap-6 md:flex" aria-label="Navigasi utama">
+      <nav
+        class="hidden items-center gap-6 md:flex"
+        aria-label="Navigasi utama"
+      >
         <NuxtLink
           v-for="item in nav"
           :key="item.to"
@@ -104,7 +112,10 @@ watch(
         id="mobile-nav"
         class="overflow-hidden border-t border-outline-soft md:hidden"
       >
-        <nav class="mx-auto max-w-6xl px-4 py-4 sm:px-6" aria-label="Navigasi menu">
+        <nav
+          class="mx-auto max-w-6xl px-4 py-4 sm:px-6"
+          aria-label="Navigasi menu"
+        >
           <ul class="space-y-1">
             <li v-for="item in nav" :key="item.to">
               <NuxtLink

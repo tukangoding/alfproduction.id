@@ -5,6 +5,7 @@ export const SITE_URL = "https://alfproduction.id";
 export const brand = {
   name: "ALF Production",
   tagline: "Spesialis Produksi Mars & Hymne Sekolah",
+  logo: "../public/logo.png",
 } as const;
 
 export interface NavItem {
@@ -50,7 +51,8 @@ export const socials: SocialLink[] = [
 
 export const contact = {
   whatsappDisplay: "0857-2795-6892",
-  email: "" /* [ISI EMAIL BISNIS] placeholder, left empty */,
+  email:
+    "media.alfproduction@gmail.com" /* [ISI EMAIL BISNIS] placeholder, left empty */,
   address: "" /* [ISI] placeholder, left empty */,
 } as const;
 
