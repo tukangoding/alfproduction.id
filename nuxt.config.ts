@@ -5,7 +5,18 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   nitro: {
     prerender: {
-      failOnError: false
+      failOnError: true,
+      ignore: [
+        '/tentang',
+        '/layanan',
+        '/portofolio',
+        '/cara-pemesanan',
+        '/kemitraan',
+        '/faq',
+        '/kontak',
+        '/kebijakan-privasi',
+        '/syarat-ketentuan'
+      ]
     }
   },
   postcss: {
