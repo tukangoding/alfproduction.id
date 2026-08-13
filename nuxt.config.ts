@@ -16,9 +16,9 @@ export default defineNuxtConfig({
       'tailwindcss/nesting': {},
       tailwindcss: {},
       autoprefixer: {},
-      cssnano: {
-        preset: ['default', { discardComments: { removeAll: true } }]
-      }
+      ...(process.env.NODE_ENV === 'production'
+        ? { cssnano: { preset: ['default', { discardComments: { removeAll: true } }] } }
+        : {})
     }
   },
   app: {
