@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { waLink } from '~/config/site'
+import { useAudioPlayer } from '~/composables/useAudioPlayer'
+
+const { isOpen } = useAudioPlayer()
 
 const visible = ref(false)
 
@@ -25,7 +28,7 @@ onUnmounted(() => {
     aria-label="Chat WhatsApp"
     class="md-elevated-2 fixed bottom-20 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-on transition-all duration-300 hover:scale-110"
     :class="
-      visible
+      visible && !isOpen
         ? 'translate-y-0 opacity-100'
         : 'pointer-events-none translate-y-3 opacity-0'
     "
