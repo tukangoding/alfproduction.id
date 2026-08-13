@@ -1,0 +1,25 @@
+# Nuxt build output
+.nuxt
+.output
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# OS / editor
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# Local / env
+*.local
+.env
+.env.*
+
+# Project tooling
+.superpowers/

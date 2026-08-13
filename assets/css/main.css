@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --md-sys-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, "Segoe UI", Roboto, sans-serif;
+  --md-sys-color-surface: #f7f8fa;
+  --md-sys-color-surface-dim: #eef0f4;
+  --md-sys-color-surface-container: #ffffff;
+  --md-sys-color-surface-container-high: #e9ecf1;
+  --md-sys-color-primary: #accd21;
+  --md-sys-color-on-primary: #1b2500;
+  --md-sys-color-primary-container: #e9f5c0;
+  --md-sys-color-on-primary-container: #2a3a00;
+  --md-sys-color-secondary: #d4af37;
+  --md-sys-color-on-secondary: #2b2300;
+  --md-sys-color-secondary-container: #f6e9c4;
+  --md-sys-color-tertiary: #4a90e2;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-on-surface: #1a1d23;
+  --md-sys-color-on-surface-variant: #5f6b7a;
+  --md-sys-color-outline: #c9cfd8;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 20px;
+  --md-sys-shape-corner-full: 9999px;
+  --md-hig-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --md-hig-elevation-2: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --md-hig-elevation-3: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    font-family: var(--md-sys-font-family);
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer utilities {
+  .md-elevated-1 {
+    box-shadow: var(--md-hig-elevation-1);
+  }
+
+  .md-elevated-2 {
+    box-shadow: var(--md-hig-elevation-2);
+  }
+
+  .md-elevated-3 {
+    box-shadow: var(--md-hig-elevation-3);
+  }
+}
