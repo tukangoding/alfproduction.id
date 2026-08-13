@@ -8,7 +8,6 @@ export default defineNuxtConfig({
       failOnError: true,
       ignore: [
         '/faq',
-        '/kontak',
         '/kebijakan-privasi',
         '/syarat-ketentuan'
       ]
