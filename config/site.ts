@@ -67,5 +67,6 @@ export const whyUs: string[] = [
   'Fokus pada produksi Mars & Hymne sekolah/lembaga',
   'Pilihan paket disesuaikan dengan kebutuhan lembaga',
   'Proses produksi dikerjakan secara terarah',
-  'Layanan mencakup kebutuhan musikal dan produksi audio sesuai paket'
+  'Layanan mencakup kebutuhan musikal dan produksi audio sesuai paket',
+  'Portofolio karya dapat didengarkan melalui kanal ALF Production.'
 ]

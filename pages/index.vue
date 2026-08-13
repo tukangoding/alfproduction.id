@@ -107,7 +107,11 @@ useHead({
     />
 
     <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-      <PricingCard v-for="pkg in servicePackages" :key="pkg.id" :pkg="pkg" />
+      <PricingCard
+        v-for="pkg in servicePackages.slice(0, 3)"
+        :key="pkg.id"
+        :pkg="pkg"
+      />
     </div>
 
     <div class="mt-10 text-center">
@@ -122,7 +126,7 @@ useHead({
       subtitle="Lihat dan dengarkan beberapa karya Mars &amp; Hymne yang telah diproduksi oleh ALF Production."
     />
 
-    <PortfolioGrid class="mt-14" :items="portfolioItems" />
+    <PortfolioGrid class="mt-14" :items="portfolioItems.slice(0, 3)" />
 
     <div class="mt-10 text-center">
       <NuxtLink to="/portofolio" :class="textLinkClass">Lihat Portofolio</NuxtLink>
