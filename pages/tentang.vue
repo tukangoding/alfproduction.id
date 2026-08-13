@@ -60,7 +60,7 @@ useHead({
       class="md-elevated-2 mx-auto max-w-4xl rounded-md-large bg-surface-container p-8 md:p-14"
     >
       <span
-        class="block text-6xl leading-none text-primary"
+        class="block text-6xl leading-none text-primary-strong"
         aria-hidden="true"
       >
         &ldquo;

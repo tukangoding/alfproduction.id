@@ -100,7 +100,7 @@ useHead({
           :href="waLink()"
           target="_blank"
           rel="noopener"
-          class="font-medium text-primary transition-colors hover:underline"
+          class="font-medium text-primary-strong transition-colors hover:underline"
         >
           WhatsApp
         </a>.

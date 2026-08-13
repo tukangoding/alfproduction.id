@@ -168,7 +168,7 @@ const contactRows: ContactRow[] = [
             :href="row.href"
             target="_blank"
             rel="noopener"
-            class="font-medium text-on-surface underline-offset-4 hover:text-primary hover:underline"
+            class="font-medium text-on-surface underline-offset-4 hover:text-primary-strong hover:underline"
           >
             {{ row.value }}
           </a>

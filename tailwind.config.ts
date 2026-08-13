@@ -24,6 +24,7 @@ export default {
         primary: {
           DEFAULT: 'var(--md-sys-color-primary)',
           on: 'var(--md-sys-color-on-primary)',
+          strong: 'var(--md-sys-color-primary-strong)',
           container: 'var(--md-sys-color-primary-container)',
           'on-container': 'var(--md-sys-color-on-primary-container)'
         },

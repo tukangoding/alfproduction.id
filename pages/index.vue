@@ -6,7 +6,7 @@ import { faqItems } from '~/config/faq'
 import { pageKeywords } from '~/config/seo'
 
 const textLinkClass =
-  'inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:underline hover:decoration-primary hover:underline-offset-4'
+  'inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong transition-colors hover:underline hover:decoration-primary-strong hover:underline-offset-4'
 
 useHead({
   title: 'ALF Production — Jasa Bikin Mars & Hymne Sekolah / Yayasan',

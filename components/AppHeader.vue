@@ -23,7 +23,7 @@ watch(
     <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
       <NuxtLink to="/" class="flex items-baseline gap-1.5 text-lg font-bold tracking-tight">
         <span class="text-on-surface">{{ brand.name.split(' ')[0] }}</span>
-        <span class="text-primary">{{ brand.name.split(' ').slice(1).join(' ') }}</span>
+        <span class="text-primary-strong">{{ brand.name.split(' ').slice(1).join(' ') }}</span>
       </NuxtLink>
 
       <nav class="hidden items-center gap-6 md:flex" aria-label="Navigasi utama">

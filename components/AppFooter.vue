@@ -10,7 +10,7 @@ import { includedServices, servicePackages } from '~/config/services'
         <div>
           <p class="flex items-baseline gap-1.5 text-lg font-bold tracking-tight text-on-surface">
             <span>{{ brand.name.split(' ')[0] }}</span>
-            <span class="text-primary">{{ brand.name.split(' ').slice(1).join(' ') }}</span>
+            <span class="text-primary-strong">{{ brand.name.split(' ').slice(1).join(' ') }}</span>
           </p>
           <p class="mt-2 text-sm font-medium text-on-surface">{{ brand.tagline }}</p>
           <p class="mt-3 max-w-xs text-sm leading-relaxed text-on-surface-variant">
@@ -25,7 +25,7 @@ import { includedServices, servicePackages } from '~/config/services'
             <li v-for="service in includedServices" :key="service">
               <NuxtLink
                 to="/layanan#paket"
-                class="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                class="inline-block py-1.5 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
               >
                 {{ service }}
               </NuxtLink>
@@ -39,7 +39,7 @@ import { includedServices, servicePackages } from '~/config/services'
             <li v-for="pkg in servicePackages" :key="pkg.id">
               <NuxtLink
                 :to="`/layanan#${pkg.id}`"
-                class="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                class="inline-block py-1.5 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
               >
                 {{ pkg.name }}
               </NuxtLink>
@@ -55,7 +55,7 @@ import { includedServices, servicePackages } from '~/config/services'
                 :href="waLink()"
                 target="_blank"
                 rel="noopener"
-                class="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                class="inline-block py-1.5 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
               >
                 {{ contact.whatsappDisplay }}
               </a>
@@ -65,7 +65,7 @@ import { includedServices, servicePackages } from '~/config/services'
                 :href="social.url"
                 target="_blank"
                 rel="noopener"
-                class="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                class="inline-block py-1.5 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
               >
                 {{ social.name }}
               </a>

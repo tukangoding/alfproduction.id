@@ -20,7 +20,7 @@ withDefaults(
   >
     <p
       v-if="eyebrow"
-      class="text-sm font-semibold uppercase tracking-widest text-primary"
+      class="text-sm font-semibold uppercase tracking-widest text-primary-strong"
     >
       {{ eyebrow }}
     </p>

@@ -26,7 +26,11 @@ onMounted(() => {
     if (!entries.some((entry) => entry.isIntersecting)) return
     observer?.disconnect()
     observer = null
-    void loadParticles(canvas)
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => void loadParticles(canvas), { timeout: 4000 })
+    } else {
+      window.setTimeout(() => void loadParticles(canvas), 4000)
+    }
   })
   observer.observe(canvas)
 })

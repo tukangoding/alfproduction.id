@@ -27,7 +27,7 @@ const ctaClasses = computed(() =>
 
     <p
       class="text-sm font-semibold uppercase tracking-widest"
-      :class="pkg.featured ? 'text-primary' : 'text-on-surface-variant'"
+      :class="pkg.featured ? 'text-primary-strong' : 'text-on-surface-variant'"
     >
       {{ pkg.name }}
     </p>
@@ -47,7 +47,7 @@ const ctaClasses = computed(() =>
         class="flex items-start gap-2.5 text-sm text-on-surface"
       >
         <svg
-          class="mt-0.5 h-4 w-4 shrink-0 text-primary"
+          class="mt-0.5 h-4 w-4 shrink-0 text-primary-strong"
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden="true"

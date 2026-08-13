@@ -7,6 +7,10 @@ const props = defineProps<{
 
 const imageFailed = ref(false)
 
+const isPlaceholder = computed(() =>
+  props.item.youtubeId.startsWith('PLACEHOLDER')
+)
+
 const coverSrc = computed(
   () => `https://img.youtube.com/vi/${props.item.youtubeId}/hqdefault.jpg`
 )
@@ -18,7 +22,7 @@ const coverSrc = computed(
       class="cover relative overflow-hidden rounded-t-md-large bg-surface-container-high"
     >
       <img
-        v-if="!imageFailed"
+        v-if="!isPlaceholder && !imageFailed"
         :src="coverSrc"
         :alt="item.title"
         loading="lazy"
