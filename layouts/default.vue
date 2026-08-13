@@ -7,6 +7,6 @@
     <AppFooter />
     <WhatsAppFloat />
     <StickyAudioPlayer />
-    <CinematicCanvas.client />
+    <CinematicCanvas />
   </div>
 </template>
