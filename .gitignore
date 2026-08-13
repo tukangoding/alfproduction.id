@@ -23,3 +23,6 @@ logs
 
 # Project tooling
 .superpowers/
+
+# Ico
+public/favicon_io.zip
