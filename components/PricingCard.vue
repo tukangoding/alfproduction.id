@@ -64,7 +64,7 @@ const ctaClasses = computed(() =>
 
     <div class="mt-7 flex flex-1 items-end">
       <a
-        :href="waLink()"
+        :href="waLink(`Halo ALF Production, saya ingin konsultasi paket ${pkg.name} (${pkg.price}) untuk pembuatan Mars/Hymne.`)"
         target="_blank"
         rel="noopener"
         class="w-full"
