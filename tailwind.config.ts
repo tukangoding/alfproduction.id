@@ -18,7 +18,8 @@ export default {
           DEFAULT: 'var(--md-sys-color-surface)',
           dim: 'var(--md-sys-color-surface-dim)',
           container: 'var(--md-sys-color-surface-container)',
-          'container-high': 'var(--md-sys-color-surface-container-high)'
+          'container-high': 'var(--md-sys-color-surface-container-high)',
+          translucent: 'var(--md-sys-color-surface-translucent)'
         },
         primary: {
           DEFAULT: 'var(--md-sys-color-primary)',
@@ -36,7 +37,8 @@ export default {
           DEFAULT: 'var(--md-sys-color-on-surface)',
           variant: 'var(--md-sys-color-on-surface-variant)'
         },
-        outline: 'var(--md-sys-color-outline)'
+        outline: 'var(--md-sys-color-outline)',
+        'outline-soft': 'var(--md-sys-color-outline-soft)'
       },
       borderRadius: {
         'md-medium': 'var(--md-sys-shape-corner-medium)',
