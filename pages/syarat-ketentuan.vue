@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
+import { pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'Syarat & Ketentuan | ALF Production',
@@ -8,8 +9,13 @@ useHead({
       name: 'description',
       content:
         'Syarat dan ketentuan layanan pembuatan Mars & Hymne oleh ALF Production — proses pemesanan, revisi, pembayaran, dan hak cipta karya.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/syarat-ketentuan'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/syarat-ketentuan/` }]
 })
 </script>
 

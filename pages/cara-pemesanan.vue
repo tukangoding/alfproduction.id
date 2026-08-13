@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
+import { pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'Cara Pemesanan | ALF Production',
@@ -8,8 +9,13 @@ useHead({
       name: 'description',
       content:
         'Simak cara pemesanan Mars & Hymne di ALF Production — dari konsultasi kebutuhan, pilih paket, brief, produksi, mixing & mastering, hingga finalisasi.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/cara-pemesanan'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/cara-pemesanan/` }]
 })
 </script>
 

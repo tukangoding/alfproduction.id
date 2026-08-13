@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { waLink, socials, contact } from '~/config/site'
+import { waLink, socials, contact, SITE_URL } from '~/config/site'
+import { pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'Kontak | ALF Production',
@@ -8,8 +9,13 @@ useHead({
       name: 'description',
       content:
         'Hubungi ALF Production untuk pemesanan Mars & Hymne sekolah, yayasan, pesantren, dan lembaga — WhatsApp 0857-2795-6892 atau melalui formulir pemesanan.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/kontak'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/kontak/` }]
 })
 
 const orderSteps = [

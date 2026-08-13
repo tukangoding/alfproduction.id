@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
+import { pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'Kebijakan Privasi | ALF Production',
@@ -8,8 +9,13 @@ useHead({
       name: 'description',
       content:
         'Kebijakan privasi ALF Production — bagaimana data Anda dikumpulkan, digunakan, dan dilindungi saat berkomunikasi melalui WhatsApp.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/kebijakan-privasi'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/kebijakan-privasi/` }]
 })
 </script>
 

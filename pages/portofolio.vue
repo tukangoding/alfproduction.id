@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { portfolioItems, portfolioFilters } from '~/config/portfolio'
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
+import { buildItemListSchema, pageKeywords } from '~/config/seo'
+
+const itemListSchema = buildItemListSchema()
 
 const activeFilter = ref(portfolioFilters[0] ?? 'Semua')
 
@@ -20,8 +23,16 @@ useHead({
       name: 'description',
       content:
         'Dengarkan portofolio Mars & Hymne karya ALF Production untuk sekolah dan yayasan. Setiap karya membantu lembaga memiliki identitas yang berkarakter.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/portofolio'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/portofolio/` }],
+  script: itemListSchema
+    ? [{ type: 'application/ld+json', children: JSON.stringify(itemListSchema) }]
+    : []
 })
 </script>
 

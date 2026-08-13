@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { heroStats, waLink, whyUs } from '~/config/site'
+import { heroStats, waLink, whyUs, SITE_URL } from '~/config/site'
 import { servicePackages } from '~/config/services'
 import { portfolioItems } from '~/config/portfolio'
 import { faqItems } from '~/config/faq'
+import { pageKeywords } from '~/config/seo'
 
 const textLinkClass =
   'inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:underline hover:decoration-primary hover:underline-offset-4'
@@ -14,8 +15,13 @@ useHead({
       name: 'description',
       content:
         'Jasa profesional pembuatan lagu Mars & Hymne khusus Sekolah Islam Terpadu (SIT), Yayasan Pendidikan, & Perguruan Tinggi. Audio kualitas studio profesional.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/` }]
 })
 </script>
 

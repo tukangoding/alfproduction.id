@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   ssr: true,
   modules: ['@nuxtjs/sitemap'],
   site: { url: 'https://alfproduction.id/' },
+  sitemap: {
+    exclude: ['/kebijakan-privasi', '/syarat-ketentuan']
+  },
   css: ['~/assets/css/main.css'],
   nitro: {
     prerender: {

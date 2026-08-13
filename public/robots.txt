@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /kebijakan-privasi/
+Disallow: /syarat-ketentuan/
+
+Sitemap: https://alfproduction.id/sitemap.xml

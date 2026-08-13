@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
+import { pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'Kemitraan | ALF Production',
@@ -8,8 +9,13 @@ useHead({
       name: 'description',
       content:
         'Ajukan kemitraan dengan ALF Production untuk produksi Mars & Hymne sekolah dan lembaga — terbuka untuk jejaring pendidikan, organisasi, marketplace, dan mitra.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/kemitraan'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/kemitraan/` }]
 })
 
 const partnerTypes = [

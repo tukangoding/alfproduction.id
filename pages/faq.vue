@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
 import { faqItems } from '~/config/faq'
-import { buildFaqPageSchema } from '~/config/seo'
+import { buildFaqPageSchema, pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'FAQ | ALF Production',
@@ -10,8 +10,13 @@ useHead({
       name: 'description',
       content:
         'Pertanyaan yang sering diajukan tentang jasa pembuatan Mars & Hymne sekolah, yayasan, dan lembaga oleh ALF Production — konsultasi gratis.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/faq'].join(', ')
     }
   ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/faq/` }],
   script: [
     {
       type: 'application/ld+json',

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { servicePackages, includedServices } from '~/config/services'
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
+import { pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'Layanan & Paket | ALF Production',
@@ -9,8 +10,13 @@ useHead({
       name: 'description',
       content:
         'Paket pembuatan Mars & Hymne sekolah dan yayasan — GOLD, SILVER, BRONZE. Konsultasi gratis untuk kebutuhan lembaga Anda.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/layanan'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/layanan/` }]
 })
 </script>
 

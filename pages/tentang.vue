@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { waLink } from '~/config/site'
+import { waLink, SITE_URL } from '~/config/site'
+import { pageKeywords } from '~/config/seo'
 
 useHead({
   title: 'Tentang Kami | ALF Production',
@@ -8,8 +9,13 @@ useHead({
       name: 'description',
       content:
         'Kenali ALF Production, layanan produksi yang berfokus pada pembuatan Mars & Hymne untuk sekolah dan lembaga, dari tahapan musikal hingga audio siap pakai.'
+    },
+    {
+      name: 'keywords',
+      content: pageKeywords['/tentang'].join(', ')
     }
-  ]
+  ],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/tentang/` }]
 })
 </script>
 
