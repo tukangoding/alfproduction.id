@@ -7,8 +7,6 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: true,
       ignore: [
-        '/tentang',
-        '/cara-pemesanan',
         '/kemitraan',
         '/faq',
         '/kontak',
