@@ -8,7 +8,6 @@ export default defineNuxtConfig({
       failOnError: true,
       ignore: [
         '/tentang',
-        '/portofolio',
         '/cara-pemesanan',
         '/kemitraan',
         '/faq',
