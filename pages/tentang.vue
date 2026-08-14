@@ -61,11 +61,11 @@ useHead({
     >
       <div class="relative mx-auto w-56 md:w-64">
         <div
-          class="absolute -bottom-4 -right-4 h-full w-full rounded-full bg-primary"
+          class="absolute -inset-4 rounded-full bg-primary"
           aria-hidden="true"
         />
         <img
-          src="/hero.png"
+          src="/alief.png"
           alt="Foto founder ALF Production"
           width="500"
           height="500"
