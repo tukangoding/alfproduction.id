@@ -4,7 +4,7 @@ export interface Track {
   id: string
   youtubeId: string
   title: string
-  category: 'SIT' | 'Yayasan' | 'Hymne' | 'Mars'
+  category: 'Mars' | 'Hymne'
   client: string
 }
 
