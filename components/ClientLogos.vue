@@ -21,14 +21,14 @@ const marqueeLogos = [...clientLogos, ...clientLogos]
           v-for="(logo, index) in marqueeLogos"
           :key="`${logo.src}-${index}`"
           role="listitem"
-          class="flex h-14 shrink-0 items-center justify-center md:h-16"
+          class="flex h-[clamp(3.5rem,5vw,4.75rem)] shrink-0 items-center justify-center"
         >
           <img
             :src="logo.src"
             :alt="`Logo ${logo.name}`"
             loading="lazy"
             decoding="async"
-            class="h-auto w-auto max-h-12 max-w-[120px] object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:max-h-16 md:max-w-40"
+            class="h-auto w-auto max-h-[clamp(3.25rem,5vw,4.5rem)] max-w-[clamp(8.25rem,12vw,11rem)] object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
           />
         </div>
       </div>
