@@ -157,15 +157,6 @@ function onKeydown(event: KeyboardEvent) {
         </nav>
       </div>
     </Transition>
-
-    <Transition name="fade">
-      <div
-        v-if="menuOpen"
-        class="fixed inset-0 z-40 bg-black/40 md:hidden"
-        aria-hidden="true"
-        @click="closeMenu"
-      />
-    </Transition>
   </header>
 </template>
 
@@ -187,15 +178,5 @@ function onKeydown(event: KeyboardEvent) {
 .slide-leave-from {
   max-height: 520px;
   opacity: 1;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
