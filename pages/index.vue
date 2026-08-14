@@ -82,7 +82,7 @@ useHead({
           class="order-first mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl lg:order-none lg:max-w-none"
         >
           <img
-            src="/hero-production.webp"
+            src="/hero.png"
             alt="Peralatan studio produksi musik ALF Production"
             width="500"
             height="500"
