@@ -41,7 +41,7 @@ function onKeydown(event: KeyboardEvent) {
 <template>
   <header
     ref="headerRef"
-    class="sticky top-0 z-50 border-b border-outline-soft bg-surface-translucent backdrop-blur-md"
+    class="sticky top-0 z-50 border-b border-outline-soft bg-white backdrop-blur-md md:bg-surface-translucent"
   >
     <div
       class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
