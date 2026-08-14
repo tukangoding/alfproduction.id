@@ -78,7 +78,25 @@ useHead({
           </ul>
         </div>
 
-        <div class="mx-auto w-full max-w-md lg:max-w-none">
+        <div
+          class="relative order-first mx-auto aspect-square w-full max-w-sm lg:order-none lg:max-w-none"
+        >
+          <div
+            class="pointer-events-none absolute inset-0 rounded-full border-2 border-dashed border-[#accd21cc]"
+            aria-hidden="true"
+          />
+          <span
+            class="pointer-events-none absolute left-[16%] top-[4%] h-3.5 w-3.5 rounded-full bg-primary"
+            aria-hidden="true"
+          />
+          <span
+            class="pointer-events-none absolute right-[12%] top-[10%] h-2.5 w-2.5 rounded-full bg-primary-strong"
+            aria-hidden="true"
+          />
+          <span
+            class="pointer-events-none absolute bottom-[8%] left-[8%] h-2 w-2 rounded-full bg-primary"
+            aria-hidden="true"
+          />
           <img
             src="/hero.png"
             alt="Gambar karya produksi Mars & Hymne ALF Production"
@@ -86,7 +104,7 @@ useHead({
             height="500"
             fetchpriority="high"
             decoding="async"
-            class="md-elevated-3 h-auto w-full rounded-md-large"
+            class="h-full w-full object-contain [-webkit-mask-image:radial-gradient(circle_at_50%_44%,#000_60%,transparent_78%)] [mask-image:radial-gradient(circle_at_50%_44%,#000_60%,transparent_78%)]"
           />
         </div>
       </div>

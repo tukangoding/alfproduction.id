@@ -60,17 +60,17 @@ import { includedServices, servicePackages } from '~/config/services'
                 {{ contact.whatsappDisplay }}
               </a>
             </li>
-            <li v-for="social in socials" :key="social.name">
-              <a
-                :href="social.url"
-                target="_blank"
-                rel="noopener"
-                class="inline-block py-1.5 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
-              >
-                {{ social.name }}
-              </a>
-            </li>
           </ul>
+          <div class="mt-4 flex items-center gap-3">
+            <SocialIconLink icon="whatsapp" :href="waLink()" label="WhatsApp" />
+            <SocialIconLink
+              v-for="social in socials"
+              :key="social.name"
+              :icon="social.icon"
+              :href="social.url"
+              :label="social.name"
+            />
+          </div>
         </div>
       </div>
 

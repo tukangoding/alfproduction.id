@@ -3,21 +3,44 @@ import { brand, nav, waLink, type NavItem } from "~/config/site";
 
 const route = useRoute();
 const menuOpen = ref(false);
+const headerRef = ref<HTMLElement | null>(null);
 
 function isActive(item: NavItem): boolean {
   return route.path === item.to;
 }
 
-watch(
-  () => route.path,
-  () => {
-    menuOpen.value = false;
-  },
-);
+function closeMenu() {
+  menuOpen.value = false;
+}
+
+watch(() => route.path, closeMenu);
+
+onMounted(() => {
+  document.addEventListener("click", onClickOutside);
+  document.addEventListener("keydown", onKeydown);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", onClickOutside);
+  document.removeEventListener("keydown", onKeydown);
+});
+
+function onClickOutside(event: MouseEvent) {
+  if (!menuOpen.value) return;
+  const target = event.target as Node;
+  if (headerRef.value && !headerRef.value.contains(target)) {
+    closeMenu();
+  }
+}
+
+function onKeydown(event: KeyboardEvent) {
+  if (event.key === "Escape") closeMenu();
+}
 </script>
 
 <template>
   <header
+    ref="headerRef"
     class="sticky top-0 z-50 border-b border-outline-soft bg-surface-translucent backdrop-blur-md"
   >
     <div
@@ -78,30 +101,20 @@ watch(
           aria-label="Menu"
           @click="menuOpen = !menuOpen"
         >
-          <svg
-            v-if="!menuOpen"
-            class="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            aria-hidden="true"
-          >
-            <path d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
-          <svg
-            v-else
-            class="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            aria-hidden="true"
-          >
-            <path d="M6 6l12 12M18 6L6 18" />
-          </svg>
+          <span class="flex h-4 w-5 flex-col justify-between">
+            <span
+              class="h-0.5 w-full origin-center rounded-full bg-current transition-all duration-300"
+              :class="menuOpen ? 'translate-y-[7px] rotate-45' : ''"
+            />
+            <span
+              class="h-0.5 w-full rounded-full bg-current transition-opacity duration-200"
+              :class="menuOpen ? 'opacity-0' : ''"
+            />
+            <span
+              class="h-0.5 w-full origin-center rounded-full bg-current transition-all duration-300"
+              :class="menuOpen ? '-translate-y-[7px] -rotate-45' : ''"
+            />
+          </span>
         </button>
       </div>
     </div>
@@ -144,6 +157,15 @@ watch(
         </nav>
       </div>
     </Transition>
+
+    <Transition name="fade">
+      <div
+        v-if="menuOpen"
+        class="fixed inset-0 z-40 bg-black/40 md:hidden"
+        aria-hidden="true"
+        @click="closeMenu"
+      />
+    </Transition>
   </header>
 </template>
 
@@ -165,5 +187,15 @@ watch(
 .slide-leave-from {
   max-height: 520px;
   opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

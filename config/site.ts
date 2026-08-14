@@ -24,10 +24,13 @@ export const nav: NavItem[] = [
   { label: "Kontak", to: "/kontak", external: false },
 ];
 
+export type SocialIconName = "instagram" | "youtube" | "website" | "whatsapp";
+
 export interface SocialLink {
   name: string;
   handle: string;
   url: string;
+  icon: SocialIconName;
 }
 
 export const socials: SocialLink[] = [
@@ -35,16 +38,19 @@ export const socials: SocialLink[] = [
     name: "Instagram",
     handle: "@alfproduction-id",
     url: "https://www.instagram.com/alfproduction/",
+    icon: "instagram",
   },
   {
     name: "YouTube",
     handle: "ALF Production (@alfproduction-id)",
     url: "https://www.youtube.com/@alfproduction-id",
+    icon: "youtube",
   },
   {
     name: "Website",
     handle: "alfproduction.id",
     url: "https://alfproduction.id",
+    icon: "website",
   },
 ];
 
