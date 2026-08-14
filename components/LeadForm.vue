@@ -1,19 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { waLink } from '~/config/site'
-
-type LeadMode = 'kemitraan' | 'pesan'
-
-const props = withDefaults(defineProps<{ mode?: LeadMode }>(), {
-  mode: 'pesan'
-})
-
-const kemitraanOptions = [
-  'Jejaring Pendidikan',
-  'Organisasi',
-  'Marketplace',
-  'Mitra Lainnya'
-]
 
 const pesanOptions = [
   'Pembuatan Mars',
@@ -32,16 +19,16 @@ const form = ref({
   message: ''
 })
 
-const isKemitraan = computed(() => props.mode === 'kemitraan')
-const selectOptions = computed(() =>
-  isKemitraan.value ? kemitraanOptions : pesanOptions
-)
-const selectLabel = computed(() =>
-  isKemitraan.value ? 'Bentuk Kemitraan' : 'Bentuk Kebutuhan'
-)
-const selectPlaceholder = computed(() =>
-  isKemitraan.value ? 'Pilih bentuk kemitraan' : 'Pilih kebutuhan Anda'
-)
+function composeMessage(): string {
+  const intro = 'Halo ALF Production, saya ingin memesan pembuatan Mars/Hymne.'
+  const lines = (Object.keys(form.value) as (keyof typeof form.value)[])
+    .filter((key) => form.value[key].trim() !== '')
+    .map((key) => {
+      const label = key === 'subject' ? 'Bentuk Kebutuhan' : fieldLabels[key]
+      return `${label}: ${form.value[key].trim()}`
+    })
+  return [intro, '', ...lines].join('\n')
+}
 
 const fieldLabels: Record<Exclude<keyof typeof form.value, 'subject'>, string> =
   {
@@ -52,19 +39,6 @@ const fieldLabels: Record<Exclude<keyof typeof form.value, 'subject'>, string> =
     estimate: 'Perkiraan Kebutuhan',
     message: 'Pesan'
   }
-
-function composeMessage(): string {
-  const intro = isKemitraan.value
-    ? 'Halo ALF Production, saya ingin mengajukan kemitraan.'
-    : 'Halo ALF Production, saya ingin memesan pembuatan Mars/Hymne.'
-  const lines = (Object.keys(form.value) as (keyof typeof form.value)[])
-    .filter((key) => form.value[key].trim() !== '')
-    .map((key) => {
-      const label = key === 'subject' ? selectLabel.value : fieldLabels[key]
-      return `${label}: ${form.value[key].trim()}`
-    })
-  return [intro, '', ...lines].join('\n')
-}
 
 function onSubmit(): void {
   window.open(waLink(composeMessage()), '_blank', 'noopener')
@@ -136,7 +110,7 @@ function onSubmit(): void {
 
       <div class="flex flex-col gap-2 md:col-span-2">
         <label for="lead-subject" class="text-sm font-medium text-on-surface">
-          {{ selectLabel }}
+          Bentuk Kebutuhan
         </label>
         <select
           id="lead-subject"
@@ -145,9 +119,9 @@ function onSubmit(): void {
           required
           class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
         >
-          <option value="" disabled>{{ selectPlaceholder }}</option>
+          <option value="" disabled>Pilih kebutuhan Anda</option>
           <option
-            v-for="option in selectOptions"
+            v-for="option in pesanOptions"
             :key="option"
             :value="option"
           >

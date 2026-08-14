@@ -20,7 +20,6 @@ export const nav: NavItem[] = [
   { label: "Layanan & Paket", to: "/layanan", external: false },
   { label: "Portofolio", to: "/portofolio", external: false },
   { label: "Cara Pemesanan", to: "/cara-pemesanan", external: false },
-  // { label: 'Kemitraan', to: '/kemitraan', external: false },
   { label: "FAQ", to: "/faq", external: false },
   { label: "Kontak", to: "/kontak", external: false },
 ];

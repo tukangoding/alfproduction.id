@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import { WA_NUMBER, waLink, nav, heroStats } from '../config/site'
 import { servicePackages } from '../config/services'
-import { portfolioItems } from '../config/portfolio'
+import {
+  portfolioItems,
+  portfolioFilters,
+  portfolioTypeLabels
+} from '../config/portfolio'
 
 describe('site config', () => {
   it('exports a valid international WhatsApp number', () => {
@@ -23,8 +27,8 @@ describe('site config', () => {
     )
   })
 
-  it('has exactly 8 nav items with no duplicate paths', () => {
-    expect(nav).toHaveLength(8)
+  it('has exactly 7 nav items with no duplicate paths', () => {
+    expect(nav).toHaveLength(7)
     const paths = nav.map((item) => item.to)
     expect(new Set(paths).size).toBe(paths.length)
   })
@@ -56,10 +60,19 @@ describe('service packages', () => {
 })
 
 describe('portfolio items', () => {
-  it('has 3 items with unique ids', () => {
-    expect(portfolioItems).toHaveLength(3)
+  it('has 15 items with unique ids and youtube ids', () => {
+    expect(portfolioItems).toHaveLength(15)
     const ids = portfolioItems.map((item) => item.id)
     expect(new Set(ids).size).toBe(ids.length)
+    const youtubeIds = portfolioItems.map((item) => item.youtubeId)
+    expect(new Set(youtubeIds).size).toBe(youtubeIds.length)
+  })
+
+  it('has no placeholder youtube ids', () => {
+    for (const item of portfolioItems) {
+      expect(item.youtubeId.startsWith('PLACEHOLDER')).toBe(false)
+      expect(item.youtubeId).toMatch(/^[a-zA-Z0-9_-]{11}$/)
+    }
   })
 
   it('every item has non-empty youtubeId, title, and client', () => {
@@ -73,7 +86,12 @@ describe('portfolio items', () => {
   it('every item uses a valid category and type', () => {
     for (const item of portfolioItems) {
       expect(['Mars', 'Hymne']).toContain(item.category)
-      expect(['SIT', 'Yayasan', 'Sekolah', 'Pesantren']).toContain(item.type)
+      expect(portfolioTypeLabels).toContain(item.type)
     }
+  })
+
+  it('exposes the full filter list with Semua first', () => {
+    expect(portfolioFilters[0]).toBe('Semua')
+    expect(portfolioFilters.slice(1)).toEqual([...portfolioTypeLabels])
   })
 })

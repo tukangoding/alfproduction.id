@@ -61,10 +61,6 @@ export const pageKeywords: Record<string, string[]> = {
     'komposer mars sekolah islam',
     'karya mars yayasan pendidikan'
   ],
-  '/kemitraan': [
-    'kemitraan komposer mars hymne',
-    'kerjasama pembuatan mars hymne'
-  ],
   '/faq': ['faq mars hymne sekolah', 'pertanyaan pembuatan mars hymne'],
   '/kontak': [
     'kontak jasa mars hymne semarang',

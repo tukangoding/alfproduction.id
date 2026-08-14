@@ -29,7 +29,7 @@ npm run generate   # build static site ke dist/
 1. Tambahkan properti **domain** `alfproduction.id`.
 2. Verifikasi via **DNS TXT record** (di cPanel Hostinger → DNS Zone Editor).
 3. Submit `sitemap.xml` di menu **Sitemaps**.
-4. Minta indexing untuk 8 URL indexable: `/`, `/layanan`, `/portofolio`, `/tentang`, `/cara-pemesanan`, `/kemitraan`, `/faq`, `/kontak` (`/kebijakan-privasi` & `/syarat-ketentuan` sengaja di-block di `robots.txt`).
+4. Minta indexing untuk 7 URL indexable: `/`, `/layanan`, `/portofolio`, `/tentang`, `/cara-pemesanan`, `/faq`, `/kontak` (`/kebijakan-privasi` & `/syarat-ketentuan` sengaja di-block di `robots.txt`).
 
 ## Google Business Profile
 
@@ -37,9 +37,13 @@ npm run generate   # build static site ke dist/
 2. Tambahkan link website `https://alfproduction.id`.
 3. Jaga NAP (Name, Address, Phone) konsisten dengan situs.
 
+## Script Pengaturan Konten
+
+- **Portofolio dari YouTube**: `node scripts/extract-youtube.mjs` — mengambil daftar video kanal `@alfproduction-id`, menyaring judul ber-"Mars" (mengabaikan yang ber-"Penjelasan"), lalu menulis `config/portfolio.ts`. Jalankan ulang setiap ada video baru (opsional: `--year 2026`, `--input <file HTML>` untuk offline).
+- **Favicon**: `node scripts/generate-favicons.mjs` — membangkitkan set ikon (`favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`, `android-chrome-*`) + `site.webmanifest` dari `public/logo.png`.
+
 ## Catatan Tindak Lanjut Owner
 
-- **Email & alamat**: isi `contact.email` dan `contact.address` di `config/site.ts` (saat ini placeholder kosong/"ISI").
-- **Portofolio**: tambah entri di `config/portfolio.ts` untuk mencapai 10+ karya (sesuai referensi PRD).
-- **Video YouTube**: ganti `PLACEHOLDER_1..3` di `config/portfolio.ts` dengan ID video YouTube asli — otomatis terpakai di kartu portofolio, sticky player, JSON-LD ItemList, dan gambar sitemap.
-- **Logo**: dua file `IMG-*.jpg` sudah dikonversi ke `public/logo.png` + `public/og-cover.jpg`; sumber asli bisa diganti kapan saja.
+- **Alamat**: isi `contact.address` di `config/site.ts` (saat ini kosong).
+- **Hero & favicon**: `public/hero.jpg` dan set favicon diambil dari `IMG-20260813-WA0018.jpg`/`public/logo.png`; ganti sumber lalu jalankan ulang `scripts/generate-favicons.mjs` bila logo berubah.
+- **Hymne**: semua item portofolio saat ini berjenis Mars; tambahkan entri `category: 'Hymne'` di `config/portfolio.ts` bila ada karya Hymne (atau perluas `scripts/extract-youtube.mjs`).

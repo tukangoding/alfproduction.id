@@ -140,7 +140,7 @@ const contactRows: ContactRow[] = [
     />
 
     <div class="mx-auto mt-12 max-w-2xl">
-      <LeadForm mode="pesan" />
+      <LeadForm />
     </div>
   </section>
 
