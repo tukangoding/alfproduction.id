@@ -123,7 +123,7 @@ function onKeydown(event: KeyboardEvent) {
       <div
         v-if="menuOpen"
         id="mobile-nav"
-        class="overflow-hidden border-t border-outline-soft md:hidden"
+        class="overflow-hidden border-t border-outline-soft bg-white shadow-lg md:hidden"
       >
         <nav
           class="mx-auto max-w-6xl px-4 py-4 sm:px-6"
@@ -137,8 +137,8 @@ function onKeydown(event: KeyboardEvent) {
                 class="block rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
                 :class="
                   isActive(item)
-                    ? 'bg-primary-container text-on-primary-container'
-                    : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'
+                    ? 'bg-[#C4D600] font-semibold text-slate-800'
+                    : 'text-slate-800 hover:bg-surface-container-high'
                 "
                 @click="menuOpen = false"
               >
@@ -150,7 +150,7 @@ function onKeydown(event: KeyboardEvent) {
             :href="waLink()"
             target="_blank"
             rel="noopener"
-            class="md-elevated-1 mt-3 flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-on"
+            class="md-elevated-1 mt-4 flex w-full items-center justify-center rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-on transition-transform hover:scale-[1.02]"
           >
             Konsultasi Gratis
           </a>

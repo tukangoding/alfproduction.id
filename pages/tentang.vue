@@ -57,6 +57,49 @@ useHead({
 
   <section class="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
     <div
+      class="md-elevated-2 grid grid-cols-1 items-center gap-12 rounded-md-large bg-surface-container p-8 md:grid-cols-[auto_1fr] md:gap-14 md:p-14"
+    >
+      <div class="relative mx-auto w-56 md:w-64">
+        <div
+          class="absolute -bottom-4 -right-4 h-full w-full rounded-full bg-primary"
+          aria-hidden="true"
+        />
+        <img
+          src="/hero.png"
+          alt="Foto founder ALF Production"
+          width="500"
+          height="500"
+          loading="lazy"
+          decoding="async"
+          class="relative h-auto w-full rounded-full"
+        />
+      </div>
+
+      <div>
+        <span
+          class="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary-on"
+        >
+          Personal Guarantee &middot; Dari Founder
+        </span>
+
+        <h2
+          class="mt-4 text-2xl font-bold tracking-tight text-on-surface md:text-3xl"
+        >
+          Komitmen Kualitas ALF Production
+        </h2>
+
+        <p class="mt-4 text-lg leading-relaxed text-on-surface">
+          &ldquo;Saya, selaku founder ALF Production, berkomitmen mengerjakan
+          setiap Mars &amp; Hymne dengan aransemen yang sungguh-sungguh,
+          komunikasi yang jelas selama proses produksi, serta hasil akhir
+          terbaik yang kami banggakan &mdash; demi kepuasan lembaga Anda.&rdquo;
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+    <div
       class="md-elevated-2 mx-auto max-w-4xl rounded-md-large bg-surface-container p-8 md:p-14"
     >
       <span
