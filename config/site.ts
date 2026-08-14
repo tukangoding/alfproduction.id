@@ -5,7 +5,7 @@ export const SITE_URL = "https://alfproduction.id";
 export const brand = {
   name: "ALF Production",
   tagline: "Spesialis Produksi Mars & Hymne Sekolah",
-  logo: "../public/logo.png",
+  logo: "/logo.png",
 } as const;
 
 export interface NavItem {
