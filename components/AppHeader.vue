@@ -27,7 +27,7 @@ watch(
         <img
           :src="brand.logo"
           :alt="brand.name"
-          class="h-12 w-auto object-contain"
+          class="h-36 w-auto object-contain"
         />
       </NuxtLink>
 
