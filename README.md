@@ -45,5 +45,5 @@ npm run generate   # build static site ke dist/
 ## Catatan Tindak Lanjut Owner
 
 - **Alamat**: isi `contact.address` di `config/site.ts` (saat ini kosong).
-- **Hero & favicon**: `public/hero.jpg` dan set favicon diambil dari `IMG-20260813-WA0018.jpg`/`public/logo.png`; ganti sumber lalu jalankan ulang `scripts/generate-favicons.mjs` bila logo berubah.
+- **Hero & favicon**: `public/hero.png` dan set favicon diambil dari `public/alief.png`/`public/logo.png`; ganti sumber lalu jalankan ulang `scripts/generate-favicons.mjs` bila logo berubah.
 - **Hymne**: semua item portofolio saat ini berjenis Mars; tambahkan entri `category: 'Hymne'` di `config/portfolio.ts` bila ada karya Hymne (atau perluas `scripts/extract-youtube.mjs`).

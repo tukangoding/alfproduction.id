@@ -80,10 +80,10 @@ useHead({
 
         <div class="mx-auto w-full max-w-md lg:max-w-none">
           <img
-            src="/hero.jpg"
+            src="/hero.png"
             alt="Gambar karya produksi Mars & Hymne ALF Production"
-            width="1080"
-            height="1080"
+            width="500"
+            height="500"
             fetchpriority="high"
             decoding="async"
             class="md-elevated-3 h-auto w-full rounded-md-large"
