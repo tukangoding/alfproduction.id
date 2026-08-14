@@ -16,19 +16,19 @@ const marqueeLogos = [...clientLogos, ...clientLogos]
       role="list"
       aria-label="Logo lembaga dan institusi klien ALF Production"
     >
-      <div class="marquee-track flex w-max items-center gap-14">
+      <div class="marquee-track flex w-max items-center gap-5 md:gap-10">
         <div
           v-for="(logo, index) in marqueeLogos"
           :key="`${logo.src}-${index}`"
           role="listitem"
-          class="flex h-14 shrink-0 items-center justify-center"
+          class="flex h-14 shrink-0 items-center justify-center md:h-16"
         >
           <img
             :src="logo.src"
             :alt="`Logo ${logo.name}`"
             loading="lazy"
             decoding="async"
-            class="max-h-12 w-auto max-w-40 object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+            class="h-auto w-auto max-h-12 max-w-[120px] object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:max-h-16 md:max-w-40"
           />
         </div>
       </div>
