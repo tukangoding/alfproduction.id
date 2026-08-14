@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { brand, nav, socials, contact, waLink, type NavItem } from "~/config/site";
+import { brand, nav, waLink, type NavItem } from "~/config/site";
 
 const route = useRoute();
 const menuOpen = ref(false);
@@ -41,7 +41,7 @@ function onKeydown(event: KeyboardEvent) {
 <template>
   <header
     ref="headerRef"
-    class="sticky top-0 z-50 border-b border-outline-soft bg-white backdrop-blur-md md:bg-surface-translucent"
+    class="sticky top-0 z-50 border-b border-outline-soft bg-white"
   >
     <div
       class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
@@ -119,73 +119,83 @@ function onKeydown(event: KeyboardEvent) {
       </div>
     </div>
 
-    <div
-      v-if="menuOpen"
-      class="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
-      aria-hidden="true"
-      @click="closeMenu"
-    />
-
-    <div
-      id="mobile-nav"
-      class="fixed right-0 top-0 z-50 flex h-full w-full max-w-sm flex-col justify-between overflow-y-auto bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out md:hidden"
-      :class="menuOpen ? 'translate-x-0' : 'translate-x-full'"
-      :aria-hidden="!menuOpen"
-      :inert="!menuOpen"
-    >
-      <div class="flex items-center justify-between pb-6">
-        <img :src="brand.logo" :alt="brand.name" class="h-8 w-auto" />
-        <button
-          type="button"
-          @click="closeMenu"
-          class="rounded-full p-2 text-gray-700 transition hover:bg-gray-100"
-          aria-label="Tutup menu"
+    <Transition name="slide">
+      <div
+        v-if="menuOpen"
+        id="mobile-nav"
+        class="overflow-hidden border-t border-outline-soft bg-white shadow-lg md:hidden"
+      >
+        <nav
+          class="mx-auto max-w-6xl px-4 py-4 sm:px-6"
+          aria-label="Navigasi menu"
         >
-          <span class="block text-2xl leading-none">&#10005;</span>
-        </button>
+          <ul class="space-y-1">
+            <li v-for="item in nav" :key="item.to">
+              <NuxtLink
+                :to="item.to"
+                :external="item.external"
+                class="block rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
+                :class="
+                  isActive(item)
+                    ? 'bg-[#C4D600] font-semibold text-slate-800'
+                    : 'text-slate-800 hover:bg-surface-container-high'
+                "
+                @click="menuOpen = false"
+              >
+                {{ item.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+          <a
+            :href="waLink()"
+            target="_blank"
+            rel="noopener"
+            class="md-elevated-1 mt-4 flex w-full items-center justify-center rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-on transition-transform hover:scale-[1.02]"
+          >
+            Konsultasi Gratis
+          </a>
+        </nav>
       </div>
+    </Transition>
 
-      <nav class="flex flex-col space-y-2 py-4" aria-label="Navigasi menu">
-        <NuxtLink
-          v-for="item in nav"
-          :key="item.to"
-          :to="item.to"
-          :external="item.external"
-          @click="closeMenu"
-          class="rounded-lg px-4 py-3 text-base font-semibold transition"
-          :class="
-            isActive(item)
-              ? 'bg-[#8cb811] text-white shadow-sm'
-              : 'text-gray-900 hover:bg-gray-100'
-          "
-        >
-          {{ item.label }}
-        </NuxtLink>
-
-        <a
-          :href="waLink()"
-          target="_blank"
-          rel="noopener"
-          class="mt-4 rounded-full bg-[#8cb811] px-6 py-3.5 text-center text-base font-bold text-white shadow transition hover:opacity-95"
-        >
-          Konsultasi Gratis
-        </a>
-      </nav>
-
-      <div class="border-t border-gray-100 pt-6 text-sm text-gray-500">
-        <p class="mb-4 font-medium text-gray-800">
-          {{ contact.whatsappDisplay }}
-        </p>
-        <div class="flex gap-3">
-          <SocialIconLink
-            v-for="s in socials"
-            :key="s.name"
-            :icon="s.icon"
-            :href="s.url"
-            :label="s.name"
-          />
-        </div>
-      </div>
-    </div>
+    <Transition name="fade">
+      <div
+        v-if="menuOpen"
+        class="fixed inset-0 z-40 bg-black/40 md:hidden"
+        aria-hidden="true"
+        @click="closeMenu"
+      />
+    </Transition>
   </header>
 </template>
+
+<style scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+
+.slide-enter-to,
+.slide-leave-from {
+  max-height: 520px;
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
