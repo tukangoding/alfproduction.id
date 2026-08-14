@@ -28,53 +28,67 @@ useHead({
 <template>
   <section class="relative z-10">
     <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
-      <div class="max-w-3xl">
-        <p
-          class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant"
-        >
-          Komposer Spesialis Mars &amp; Hymne
-        </p>
-
-        <h1
-          class="mt-5 text-4xl font-bold tracking-tight text-on-surface md:text-6xl"
-        >
-          Wujudkan Mars &amp; Hymne Lembaga yang Berkarakter dan Berkesan.
-        </h1>
-
-        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
-          ALF Production membantu sekolah dan lembaga menghadirkan karya Mars
-          &amp; Hymne melalui proses produksi yang terarah, mulai dari melodi,
-          aransemen, vokal, hingga mixing &amp; mastering.
-        </p>
-
-        <div class="mt-10 flex flex-wrap items-center gap-4">
-          <a
-            :href="waLink()"
-            target="_blank"
-            rel="noopener"
-            class="md-elevated-1 inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-on transition-transform hover:scale-105"
+      <div class="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
+        <div class="max-w-3xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant"
           >
-            Konsultasi Gratis
-          </a>
-          <NuxtLink
-            to="/portofolio"
-            class="inline-flex items-center rounded-full border border-outline px-8 py-3.5 text-base font-semibold text-on-surface transition-colors hover:bg-surface-container-high"
+            Komposer Spesialis Mars &amp; Hymne
+          </p>
+
+          <h1
+            class="mt-5 text-4xl font-bold tracking-tight text-on-surface md:text-6xl"
           >
-            Lihat Portofolio
-          </NuxtLink>
+            Wujudkan Mars &amp; Hymne Lembaga yang Berkarakter dan Berkesan.
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
+            ALF Production membantu sekolah dan lembaga menghadirkan karya Mars
+            &amp; Hymne melalui proses produksi yang terarah, mulai dari melodi,
+            aransemen, vokal, hingga mixing &amp; mastering.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              :href="waLink()"
+              target="_blank"
+              rel="noopener"
+              class="md-elevated-1 inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-on transition-transform hover:scale-105"
+            >
+              Konsultasi Gratis
+            </a>
+            <NuxtLink
+              to="/portofolio"
+              class="inline-flex items-center rounded-full border border-outline px-8 py-3.5 text-base font-semibold text-on-surface transition-colors hover:bg-surface-container-high"
+            >
+              Lihat Portofolio
+            </NuxtLink>
+          </div>
+
+          <ul
+            class="mt-16 flex flex-wrap items-center gap-x-12 gap-y-4 border-t border-outline-soft pt-8 md:mt-20"
+          >
+            <li
+              v-for="stat in heroStats"
+              :key="stat"
+              class="text-sm font-medium text-on-surface-variant"
+            >
+              {{ stat }}
+            </li>
+          </ul>
         </div>
 
-        <ul
-          class="mt-16 flex flex-wrap items-center gap-x-12 gap-y-4 border-t border-outline-soft pt-8 md:mt-20"
-        >
-          <li
-            v-for="stat in heroStats"
-            :key="stat"
-            class="text-sm font-medium text-on-surface-variant"
-          >
-            {{ stat }}
-          </li>
-        </ul>
+        <div class="mx-auto w-full max-w-md lg:max-w-none">
+          <img
+            src="/hero.jpg"
+            alt="Gambar karya produksi Mars & Hymne ALF Production"
+            width="1080"
+            height="1080"
+            fetchpriority="high"
+            decoding="async"
+            class="md-elevated-3 h-auto w-full rounded-md-large"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -104,6 +118,8 @@ useHead({
       </div>
     </div>
   </section>
+
+  <ClientLogos />
 
   <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
     <SectionHeading
