@@ -3,6 +3,7 @@ import { heroStats, waLink, whyUs, SITE_URL } from '~/config/site'
 import { portfolioItems } from '~/config/portfolio'
 import { faqItems } from '~/config/faq'
 import { pageKeywords } from '~/config/seo'
+import heroImg from '~/assets/hero.png'
 
 const textLinkClass =
   'inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong transition-colors hover:underline hover:decoration-primary-strong hover:underline-offset-4'
@@ -81,7 +82,7 @@ useHead({
           class="order-first mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl lg:order-none lg:max-w-none"
         >
           <img
-            src="/hero.png"
+            :src="heroImg"
             alt="Peralatan studio produksi musik ALF Production"
             width="500"
             height="500"
