@@ -22,7 +22,7 @@ function isOpen(index: number): boolean {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-3">
     <div
       v-for="(item, index) in items"
       :key="item.question"
@@ -31,7 +31,7 @@ function isOpen(index: number): boolean {
       <h3>
         <button
           type="button"
-          class="flex w-full items-center justify-between gap-4 rounded-md-large px-6 py-5 text-left transition-colors hover:bg-surface-container-high"
+          class="flex w-full items-center justify-between gap-4 rounded-md-large px-5 py-4 text-left transition-colors hover:bg-surface-container-high"
           :aria-expanded="isOpen(index)"
           :aria-controls="`faq-panel-${index}`"
           @click="toggle(index)"
@@ -58,7 +58,7 @@ function isOpen(index: number): boolean {
         :id="`faq-panel-${index}`"
       >
         <div v-show="isOpen(index)" class="overflow-hidden">
-          <p class="px-6 pb-5 text-sm leading-relaxed text-on-surface-variant">
+          <p class="px-5 pb-4 text-sm leading-normal text-on-surface-variant">
             {{ item.answer }}
           </p>
         </div>

@@ -14,6 +14,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'alf-accent': '#8A2BE2',
         surface: {
           DEFAULT: 'var(--md-sys-color-surface)',
           dim: 'var(--md-sys-color-surface-dim)',

@@ -4,8 +4,8 @@
 
 :root {
   --md-sys-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, "Segoe UI", Roboto, sans-serif;
-  --md-sys-color-surface: #f7f8fa;
-  --md-sys-color-surface-dim: #eef0f4;
+  --md-sys-color-surface: #f2f2f7;
+  --md-sys-color-surface-dim: #e9e9ef;
   --md-sys-color-surface-container: #ffffff;
   --md-sys-color-surface-container-high: #e9ecf1;
   --md-sys-color-primary: #accd21;
@@ -21,7 +21,7 @@
   --md-sys-color-on-surface: #1a1d23;
   --md-sys-color-on-surface-variant: #5f6b7a;
   --md-sys-color-outline: #c9cfd8;
-  --md-sys-color-outline-soft: rgba(201, 207, 216, 0.3);
+  --md-sys-color-outline-soft: #e5e5ea;
   --md-sys-color-surface-translucent: rgba(247, 248, 250, 0.85);
   --md-sys-shape-corner-small: 8px;
   --md-sys-shape-corner-medium: 12px;

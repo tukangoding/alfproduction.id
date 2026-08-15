@@ -24,12 +24,12 @@ withDefaults(
     >
       {{ eyebrow }}
     </p>
-    <h2 class="mt-4 text-3xl font-bold tracking-tight text-on-surface md:text-4xl">
+    <h2 class="mt-3 text-2xl font-bold tracking-tight text-on-surface md:text-3xl">
       {{ title }}
     </h2>
     <p
       v-if="subtitle"
-      class="mt-4 max-w-2xl text-lg leading-relaxed text-on-surface-variant"
+      class="mt-3 max-w-2xl text-base leading-normal text-on-surface-variant"
     >
       {{ subtitle }}
     </p>

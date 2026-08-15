@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { heroStats, waLink, whyUs, SITE_URL } from '~/config/site'
-import { servicePackages } from '~/config/services'
 import { portfolioItems } from '~/config/portfolio'
 import { faqItems } from '~/config/faq'
 import { pageKeywords } from '~/config/seo'
@@ -27,8 +26,8 @@ useHead({
 
 <template>
   <section class="relative z-10">
-    <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
-      <div class="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+      <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
         <div class="max-w-3xl">
           <p
             class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant"
@@ -37,18 +36,18 @@ useHead({
           </p>
 
           <h1
-            class="mt-5 text-4xl font-bold tracking-tight text-on-surface md:text-6xl"
+            class="mt-4 text-3xl font-bold tracking-tight text-on-surface md:text-5xl"
           >
             Wujudkan Mars &amp; Hymne Lembaga yang Berkarakter dan Berkesan.
           </h1>
 
-          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
             ALF Production membantu sekolah dan lembaga menghadirkan karya Mars
             &amp; Hymne melalui proses produksi yang terarah, mulai dari melodi,
             aransemen, vokal, hingga mixing &amp; mastering.
           </p>
 
-          <div class="mt-10 flex flex-wrap items-center gap-4">
+          <div class="mt-8 flex flex-wrap items-center gap-4">
             <a
               :href="waLink()"
               target="_blank"
@@ -66,7 +65,7 @@ useHead({
           </div>
 
           <ul
-            class="mt-16 flex flex-wrap items-center gap-x-12 gap-y-4 border-t border-outline-soft pt-8 md:mt-20"
+            class="mt-12 flex flex-wrap items-center gap-x-10 gap-y-3 border-t border-outline-soft pt-6 md:mt-14"
           >
             <li
               v-for="stat in heroStats"
@@ -95,14 +94,14 @@ useHead({
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading title="Kenapa ALF Production?" />
 
-    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       <div
         v-for="bullet in whyUs"
         :key="bullet"
-        class="md-elevated-1 flex items-start gap-4 rounded-md-large bg-surface-container p-6"
+        class="md-elevated-1 flex items-start gap-4 rounded-md-large bg-surface-container p-5"
       >
         <span
           class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary"
@@ -123,80 +122,60 @@ useHead({
 
   <ClientLogos />
 
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-    <SectionHeading
-      eyebrow="Layanan"
-      title="Pilih Paket Sesuai Kebutuhan Lembaga Anda."
-      subtitle="Belum yakin paket mana yang sesuai? Konsultasikan kebutuhan lembaga Anda secara GRATIS."
-    />
-
-    <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-      <PricingCard
-        v-for="pkg in servicePackages.slice(0, 3)"
-        :key="pkg.id"
-        :pkg="pkg"
-      />
-    </div>
-
-    <div class="mt-10 text-center">
-      <NuxtLink to="/layanan" :class="textLinkClass">Lihat semua paket</NuxtLink>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading
       eyebrow="Portofolio"
       title="Dengarkan Karya yang Telah Kami Produksi"
       subtitle="Lihat dan dengarkan beberapa karya Mars &amp; Hymne yang telah diproduksi oleh ALF Production."
     />
 
-    <PortfolioGrid class="mt-14" :items="portfolioItems.slice(0, 3)" />
+    <PortfolioGrid class="mt-8" :items="portfolioItems.slice(0, 3)" />
 
-    <div class="mt-10 text-center">
+    <div class="mt-6 text-center">
       <NuxtLink to="/portofolio" :class="textLinkClass">Lihat Portofolio</NuxtLink>
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading eyebrow="Proses" title="Dari Ide Menjadi Karya Lembaga." />
 
-    <ProcessSteps class="mt-14" />
+    <ProcessSteps class="mt-8" />
 
-    <div class="mt-10 text-center">
+    <div class="mt-6 text-center">
       <NuxtLink to="/cara-pemesanan" :class="textLinkClass">
         Lihat cara pemesanan
       </NuxtLink>
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading eyebrow="FAQ" title="Pertanyaan yang Sering Diajukan" />
 
-    <div class="mx-auto mt-14 max-w-3xl">
+    <div class="mx-auto mt-8 max-w-3xl">
       <FaqAccordion :items="faqItems.slice(0, 3)" />
     </div>
 
-    <div class="mt-10 text-center">
+    <div class="mt-6 text-center">
       <NuxtLink to="/faq" :class="textLinkClass">Lihat semua FAQ</NuxtLink>
     </div>
   </section>
 
-  <section class="bg-surface-dim">
-    <div class="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6">
+  <section class="border-t border-outline-soft bg-surface-dim">
+    <div class="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
       <h2
-        class="mx-auto max-w-3xl text-3xl font-bold tracking-tight text-on-surface md:text-4xl"
+        class="mx-auto max-w-3xl text-2xl font-bold tracking-tight text-on-surface md:text-3xl"
       >
         Sudah Siap Punya Mars &amp; Hymne untuk Lembaga Anda?
       </h2>
 
       <p
-        class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-on-surface-variant"
+        class="mx-auto mt-4 max-w-2xl text-base leading-normal text-on-surface-variant"
       >
         Ceritakan kebutuhan lembaga Anda kepada kami. Kami akan membantu
         mengarahkan paket dan proses produksi yang sesuai.
       </p>
 
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
         <a
           :href="waLink()"
           target="_blank"

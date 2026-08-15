@@ -15,7 +15,7 @@ const ctaClasses = computed(() =>
 
 <template>
   <article
-    class="relative flex flex-col rounded-md-large bg-surface-container p-7"
+    class="relative flex flex-col rounded-md-large bg-surface-container p-5"
     :class="pkg.featured ? 'ring-2 ring-primary md-elevated-2' : 'md-elevated-1'"
   >
     <span
@@ -32,15 +32,15 @@ const ctaClasses = computed(() =>
       {{ pkg.name }}
     </p>
 
-    <p class="mt-3 text-3xl font-bold tracking-tight text-on-surface">
+    <p class="mt-2 text-2xl font-bold tracking-tight text-on-surface">
       {{ pkg.price }}
     </p>
 
-    <p class="mt-3 text-sm leading-relaxed text-on-surface-variant">
+    <p class="mt-2 text-sm leading-normal text-on-surface-variant">
       {{ pkg.description }}
     </p>
 
-    <ul class="mt-6 flex flex-col gap-2.5">
+    <ul class="mt-4 flex flex-col gap-2">
       <li
         v-for="feature in pkg.features"
         :key="feature"
@@ -58,11 +58,11 @@ const ctaClasses = computed(() =>
       </li>
     </ul>
 
-    <p v-if="pkg.note" class="mt-4 text-xs italic text-on-surface-variant">
+    <p v-if="pkg.note" class="mt-3 text-xs italic text-on-surface-variant">
       {{ pkg.note }}
     </p>
 
-    <div class="mt-7 flex flex-1 items-end">
+    <div class="mt-5 flex flex-1 items-end">
       <a
         :href="waLink(`Halo ALF Production, saya ingin konsultasi paket ${pkg.name} (${pkg.price}) untuk pembuatan Mars/Hymne.`)"
         target="_blank"

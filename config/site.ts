@@ -58,7 +58,7 @@ export const contact = {
   whatsappDisplay: "0857-2795-6892",
   email:
     "media.alfproduction@gmail.com" /* [ISI EMAIL BISNIS] placeholder, left empty */,
-  address: "" /* [ISI] placeholder, left empty */,
+  address: "Semarang, Indonesia",
 } as const;
 
 export const waMessage =

@@ -5,14 +5,14 @@ const marqueeLogos = [...clientLogos, ...clientLogos]
 </script>
 
 <template>
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading
       :title="'Dipercaya oleh Lembaga & Institusi di Indonesia'"
       subtitle="Sekolah, yayasan, dan lembaga di berbagai daerah telah mempercayakan karya Mars &amp; Hymne mereka kepada ALF Production."
     />
 
     <div
-      class="relative mt-14 overflow-hidden"
+      class="relative mt-8 overflow-hidden"
       role="list"
       aria-label="Logo lembaga dan institusi klien ALF Production"
     >

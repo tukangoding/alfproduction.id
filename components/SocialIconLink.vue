@@ -12,10 +12,10 @@ withDefaults(
 )
 
 const hoverColors: Record<SocialIconName, string> = {
-  instagram: 'hover:text-[#E4405F]',
-  youtube: 'hover:text-[#FF0000]',
-  website: 'hover:text-primary-strong',
-  whatsapp: 'hover:text-[#25D366]',
+  instagram: 'hover:text-alf-accent',
+  youtube: 'hover:text-alf-accent',
+  website: 'hover:text-alf-accent',
+  whatsapp: 'hover:text-alf-accent',
 }
 </script>
 

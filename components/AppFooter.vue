@@ -5,8 +5,8 @@ import { includedServices, servicePackages } from '~/config/services'
 
 <template>
   <footer class="border-t border-outline-soft bg-surface-dim">
-    <div class="mx-auto max-w-6xl px-4 pb-8 pt-14 sm:px-6 md:pt-16">
-      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4">
+    <div class="mx-auto max-w-6xl px-4 pb-6 pt-10 sm:px-6 md:pt-12">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
         <div>
           <p class="flex items-baseline gap-1.5 text-lg font-bold tracking-tight text-on-surface">
             <span>{{ brand.name.split(' ')[0] }}</span>
@@ -75,7 +75,7 @@ import { includedServices, servicePackages } from '~/config/services'
       </div>
 
       <div
-        class="mt-12 flex flex-col gap-3 border-t border-outline-soft pt-6 text-xs text-on-surface-variant sm:flex-row sm:items-center sm:justify-between"
+        class="mt-8 flex flex-col gap-3 border-t border-outline-soft pt-5 text-xs text-on-surface-variant sm:flex-row sm:items-center sm:justify-between"
       >
         <div class="flex flex-wrap gap-x-5 gap-y-1">
           <NuxtLink

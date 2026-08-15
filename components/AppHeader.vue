@@ -76,8 +76,8 @@ function onKeydown(event: KeyboardEvent) {
             class="absolute -bottom-1.5 left-0 h-0.5 rounded-full transition-all duration-300"
             :class="
               isActive(item)
-                ? 'w-full bg-primary'
-                : 'w-0 bg-primary group-hover:w-full'
+                ? 'w-full bg-alf-accent'
+                : 'w-0 bg-alf-accent group-hover:w-full'
             "
           />
         </NuxtLink>

@@ -46,7 +46,7 @@ function onSubmit(): void {
 </script>
 
 <template>
-  <form class="flex flex-col gap-6" @submit.prevent="onSubmit">
+  <form class="flex flex-col gap-5" @submit.prevent="onSubmit">
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
       <div class="flex flex-col gap-2">
         <label for="lead-organization" class="text-sm font-medium text-on-surface">
@@ -59,7 +59,7 @@ function onSubmit(): void {
           name="organization"
           autocomplete="organization"
           required
-          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-alf-accent focus:outline-none focus:ring-2 focus:ring-alf-accent"
         />
       </div>
 
@@ -74,7 +74,7 @@ function onSubmit(): void {
           name="picName"
           autocomplete="name"
           required
-          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-alf-accent focus:outline-none focus:ring-2 focus:ring-alf-accent"
         />
       </div>
 
@@ -90,7 +90,7 @@ function onSubmit(): void {
           autocomplete="tel"
           placeholder="08xxxxxxxxxx"
           required
-          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-alf-accent focus:outline-none focus:ring-2 focus:ring-alf-accent"
         />
       </div>
 
@@ -104,7 +104,7 @@ function onSubmit(): void {
           type="email"
           name="email"
           autocomplete="email"
-          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-alf-accent focus:outline-none focus:ring-2 focus:ring-alf-accent"
         />
       </div>
 
@@ -117,7 +117,7 @@ function onSubmit(): void {
           v-model="form.subject"
           name="subject"
           required
-          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface focus:border-alf-accent focus:outline-none focus:ring-2 focus:ring-alf-accent"
         >
           <option value="" disabled>Pilih kebutuhan Anda</option>
           <option
@@ -141,7 +141,7 @@ function onSubmit(): void {
           rows="3"
           autocomplete="off"
           placeholder="Misalnya: 1 lagu Mars untuk yayasan, selesai dalam 2 bulan"
-          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-alf-accent focus:outline-none focus:ring-2 focus:ring-alf-accent"
         ></textarea>
       </div>
 
@@ -156,19 +156,19 @@ function onSubmit(): void {
           rows="4"
           autocomplete="off"
           placeholder="Ceritakan kebutuhan Anda secara singkat"
-          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full rounded-md-medium border border-outline bg-surface-container px-4 py-3 text-base text-on-surface placeholder:text-on-surface-variant focus:border-alf-accent focus:outline-none focus:ring-2 focus:ring-alf-accent"
         ></textarea>
       </div>
     </div>
 
     <button
       type="submit"
-      class="md-elevated-1 inline-flex w-full cursor-pointer items-center justify-center rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-on transition-transform hover:scale-105"
+      class="md-elevated-1 inline-flex w-full cursor-pointer items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-on transition-transform hover:scale-105"
     >
       Kirim melalui WhatsApp
     </button>
 
-    <p class="text-sm leading-relaxed text-on-surface-variant">
+    <p class="text-sm leading-normal text-on-surface-variant">
       Tombol di atas akan membuka WhatsApp dengan pesan yang sudah terisi
       lengkap sesuai formulir ini.
     </p>

@@ -20,8 +20,8 @@ useHead({
 </script>
 
 <template>
-  <section class="relative z-10">
-    <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
+  <section class="relative z-10 border-b border-outline-soft">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
       <div class="mx-auto max-w-3xl text-center">
         <p
           class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant"
@@ -30,12 +30,12 @@ useHead({
         </p>
 
         <h1
-          class="mt-5 text-4xl font-bold tracking-tight text-on-surface md:text-5xl"
+          class="mt-4 text-3xl font-bold tracking-tight text-on-surface md:text-4xl"
         >
           Tentang ALF Production
         </h1>
 
-        <p class="mt-6 text-lg leading-relaxed text-on-surface-variant">
+        <p class="mt-4 text-base leading-normal text-on-surface-variant">
           Kenali siapa kami dan bagaimana ALF Production membantu sekolah serta
           lembaga memiliki karya Mars &amp; Hymne yang berkarakter.
         </p>
@@ -43,9 +43,9 @@ useHead({
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <div class="mx-auto max-w-3xl">
-      <p class="text-xl leading-relaxed text-on-surface">
+      <p class="text-lg leading-normal text-on-surface">
         ALF Production adalah layanan produksi yang berfokus pada pembuatan
         Mars &amp; Hymne untuk sekolah dan lembaga. Kami membantu lembaga
         memilih kebutuhan produksi yang sesuai, kemudian mengolahnya melalui
@@ -55,62 +55,21 @@ useHead({
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+  <PersonalGuarantee :isJSITNetwork="true" />
+
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 pb-10 sm:px-6">
     <div
-      class="md-elevated-2 grid grid-cols-1 items-center gap-12 rounded-md-large bg-surface-container p-8 md:grid-cols-[auto_1fr] md:gap-14 md:p-14"
-    >
-      <div class="relative mx-auto w-56 md:w-64">
-        <div
-          class="absolute -inset-4 rounded-full bg-primary"
-          aria-hidden="true"
-        />
-        <img
-          src="/alief.png"
-          alt="Foto founder ALF Production"
-          width="500"
-          height="500"
-          loading="lazy"
-          decoding="async"
-          class="relative h-auto w-full rounded-full"
-        />
-      </div>
-
-      <div>
-        <span
-          class="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary-on"
-        >
-          Personal Guarantee &middot; Dari Founder
-        </span>
-
-        <h2
-          class="mt-4 text-2xl font-bold tracking-tight text-on-surface md:text-3xl"
-        >
-          Komitmen Kualitas ALF Production
-        </h2>
-
-        <p class="mt-4 text-lg leading-relaxed text-on-surface">
-          &ldquo;Saya, selaku founder ALF Production, berkomitmen mengerjakan
-          setiap Mars &amp; Hymne dengan aransemen yang sungguh-sungguh,
-          komunikasi yang jelas selama proses produksi, serta hasil akhir
-          terbaik yang kami banggakan &mdash; demi kepuasan lembaga Anda.&rdquo;
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
-    <div
-      class="md-elevated-2 mx-auto max-w-4xl rounded-md-large bg-surface-container p-8 md:p-14"
+      class="md-elevated-2 mx-auto max-w-4xl rounded-md-large bg-surface-container p-6 md:p-10"
     >
       <span
-        class="block text-6xl leading-none text-primary-strong"
+        class="block text-5xl leading-none text-primary-strong"
         aria-hidden="true"
       >
         &ldquo;
       </span>
-      <blockquote class="mt-4">
+      <blockquote class="mt-3">
         <p
-          class="text-2xl font-medium leading-snug tracking-tight text-on-surface md:text-3xl"
+          class="text-xl font-medium leading-snug tracking-tight text-on-surface md:text-2xl"
         >
           Bagi kami, Mars &amp; Hymne bukan sekadar lagu. Karya tersebut dapat
           menjadi bagian dari identitas, semangat, dan karakter sebuah lembaga.
@@ -119,22 +78,22 @@ useHead({
     </div>
   </section>
 
-  <section class="bg-surface-dim">
-    <div class="mx-auto max-w-6xl px-4 pb-24 pt-24 text-center sm:px-6">
+  <section class="border-t border-outline-soft bg-surface-dim">
+    <div class="mx-auto max-w-6xl px-4 pb-16 pt-16 text-center sm:px-6">
       <h2
-        class="mx-auto max-w-3xl text-3xl font-bold tracking-tight text-on-surface md:text-4xl"
+        class="mx-auto max-w-3xl text-2xl font-bold tracking-tight text-on-surface md:text-3xl"
       >
         Ingin membuat Mars &amp; Hymne untuk lembaga Anda?
       </h2>
 
       <p
-        class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-on-surface-variant"
+        class="mx-auto mt-4 max-w-2xl text-base leading-normal text-on-surface-variant"
       >
         Ceritakan kebutuhan lembaga Anda, dan kami akan membantu mengarahkan
         proses produksi yang sesuai.
       </p>
 
-      <div class="mt-10">
+      <div class="mt-8">
         <a
           :href="waLink()"
           target="_blank"

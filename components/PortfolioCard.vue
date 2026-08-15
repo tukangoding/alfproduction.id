@@ -50,9 +50,9 @@ const coverSrc = computed(
       />
     </div>
 
-    <div class="p-5">
-      <h3 class="text-lg font-semibold text-on-surface">{{ item.client }}</h3>
-      <div class="mt-2.5 flex flex-wrap gap-2">
+    <div class="p-4">
+      <h3 class="text-base font-semibold text-on-surface">{{ item.client }}</h3>
+      <div class="mt-2 flex flex-wrap gap-2">
         <span
           class="rounded-full bg-surface-container-high px-2.5 py-0.5 text-xs font-medium text-on-surface-variant"
         >

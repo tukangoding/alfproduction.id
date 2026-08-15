@@ -35,20 +35,20 @@ const steps: ProcessStep[] = [
 </script>
 
 <template>
-  <ol class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <ol class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
     <li
       v-for="(step, index) in steps"
       :key="step.title"
-      class="md-elevated-1 flex flex-col gap-3 rounded-md-large bg-surface-container p-6"
+      class="md-elevated-1 flex flex-col gap-2 rounded-md-large bg-surface-container p-5"
     >
       <span
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-base font-bold text-primary-on"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-on"
         aria-hidden="true"
       >
         {{ index + 1 }}
       </span>
-      <h3 class="text-lg font-semibold text-on-surface">{{ step.title }}</h3>
-      <p class="text-sm leading-relaxed text-on-surface-variant">
+      <h3 class="text-base font-semibold text-on-surface">{{ step.title }}</h3>
+      <p class="text-sm leading-normal text-on-surface-variant">
         {{ step.description }}
       </p>
     </li>

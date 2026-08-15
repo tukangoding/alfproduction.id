@@ -21,8 +21,8 @@ useHead({
 </script>
 
 <template>
-  <section class="relative z-10">
-    <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
+  <section class="relative z-10 border-b border-outline-soft">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
       <div class="mx-auto max-w-3xl text-center">
         <p
           class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant"
@@ -31,12 +31,12 @@ useHead({
         </p>
 
         <h1
-          class="mt-5 text-4xl font-bold tracking-tight text-on-surface md:text-5xl"
+          class="mt-4 text-3xl font-bold tracking-tight text-on-surface md:text-4xl"
         >
           Pilih Paket Sesuai Kebutuhan Lembaga Anda.
         </h1>
 
-        <p class="mt-6 text-lg leading-relaxed text-on-surface-variant">
+        <p class="mt-4 text-base leading-normal text-on-surface-variant">
           Belum yakin paket mana yang sesuai? Konsultasikan kebutuhan lembaga
           Anda secara GRATIS.
         </p>
@@ -44,8 +44,8 @@ useHead({
     </div>
   </section>
 
-  <section id="paket" class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+  <section id="paket" class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
       <PricingCard
         v-for="pkg in servicePackages"
         :key="pkg.id"
@@ -54,14 +54,14 @@ useHead({
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading title="Layanan yang Termasuk" />
 
-    <div class="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-5 md:grid-cols-3">
+    <div class="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-3">
       <div
         v-for="service in includedServices"
         :key="service"
-        class="md-elevated-1 flex items-center gap-3 rounded-md-large bg-surface-container p-5"
+        class="md-elevated-1 flex items-center gap-3 rounded-md-large bg-surface-container p-4"
       >
         <span
           class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary"
@@ -80,21 +80,21 @@ useHead({
     </div>
   </section>
 
-  <section class="bg-surface-dim">
-    <div class="mx-auto max-w-6xl px-4 pb-24 pt-24 text-center sm:px-6">
+  <section class="border-t border-outline-soft bg-surface-dim">
+    <div class="mx-auto max-w-6xl px-4 pb-16 pt-16 text-center sm:px-6">
       <h2
-        class="mx-auto max-w-3xl text-3xl font-bold tracking-tight text-on-surface md:text-4xl"
+        class="mx-auto max-w-3xl text-2xl font-bold tracking-tight text-on-surface md:text-3xl"
       >
         Belum yakin paket mana yang sesuai?
       </h2>
 
       <p
-        class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-on-surface-variant"
+        class="mx-auto mt-4 max-w-2xl text-base leading-normal text-on-surface-variant"
       >
         Konsultasikan kebutuhan lembaga Anda secara GRATIS.
       </p>
 
-      <div class="mt-10">
+      <div class="mt-8">
         <a
           :href="waLink()"
           target="_blank"

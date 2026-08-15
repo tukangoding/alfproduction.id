@@ -68,8 +68,8 @@ const contactRows: ContactRow[] = [
 </script>
 
 <template>
-  <section class="relative z-10">
-    <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
+  <section class="relative z-10 border-b border-outline-soft">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
       <div class="mx-auto max-w-3xl text-center">
         <p
           class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant"
@@ -78,18 +78,18 @@ const contactRows: ContactRow[] = [
         </p>
 
         <h1
-          class="mt-5 text-4xl font-bold tracking-tight text-on-surface md:text-5xl"
+          class="mt-4 text-3xl font-bold tracking-tight text-on-surface md:text-4xl"
         >
           Pesan Mars &amp; Hymne untuk Lembaga Anda
         </h1>
 
-        <p class="mt-6 text-lg leading-relaxed text-on-surface-variant">
+        <p class="mt-4 text-base leading-normal text-on-surface-variant">
           Punya kebutuhan Mars atau Hymne untuk sekolah, yayasan, pesantren,
           atau lembaga? Ceritakan kebutuhan Anda kepada kami. ALF Production
           akan membantu mengarahkan proses dan paket produksi yang sesuai.
         </p>
 
-        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#pesan"
             class="md-elevated-1 inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-on transition-transform hover:scale-105"
@@ -109,43 +109,43 @@ const contactRows: ContactRow[] = [
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading eyebrow="Alur Pemesanan" title="Dari Pesan hingga Produksi" />
 
-    <ol class="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <ol class="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       <li
         v-for="(step, index) in orderSteps"
         :key="step.title"
-        class="md-elevated-1 flex flex-col gap-3 rounded-md-large bg-surface-container p-6"
+        class="md-elevated-1 flex flex-col gap-2 rounded-md-large bg-surface-container p-5"
       >
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-base font-bold text-primary-on"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-on"
           aria-hidden="true"
         >
           {{ index + 1 }}
         </span>
-        <h3 class="text-lg font-semibold text-on-surface">{{ step.title }}</h3>
-        <p class="text-sm leading-relaxed text-on-surface-variant">
+        <h3 class="text-base font-semibold text-on-surface">{{ step.title }}</h3>
+        <p class="text-sm leading-normal text-on-surface-variant">
           {{ step.description }}
         </p>
       </li>
     </ol>
   </section>
 
-  <section id="pesan" class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section id="pesan" class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading
       eyebrow="Pemesanan"
       title="Ajukan Pesanan Mars &amp; Hymne"
       subtitle="Isi formulir di bawah ini, dan tim kami akan menghubungi Anda melalui WhatsApp untuk mengarahkan proses dan paket produksi yang sesuai."
     />
 
-    <div class="mx-auto mt-12 max-w-2xl">
+    <div class="mx-auto mt-8 max-w-2xl">
       <LeadForm />
     </div>
   </section>
 
-  <section class="bg-surface-dim">
-    <div class="mx-auto max-w-6xl px-4 pb-24 pt-24 sm:px-6">
+  <section class="border-t border-outline-soft bg-surface-dim">
+    <div class="mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-6">
       <SectionHeading
         eyebrow="Kontak"
         title="Hubungi ALF Production"
@@ -153,12 +153,12 @@ const contactRows: ContactRow[] = [
       />
 
       <div
-        class="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        class="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
       >
         <div
           v-for="row in contactRows"
           :key="row.label"
-          class="md-elevated-1 flex flex-col gap-2 rounded-md-large bg-surface-container p-6"
+          class="md-elevated-1 flex flex-col gap-2 rounded-md-large bg-surface-container p-5"
         >
           <p class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant">
             {{ row.label }}
@@ -168,7 +168,7 @@ const contactRows: ContactRow[] = [
             :href="row.href"
             target="_blank"
             rel="noopener"
-            class="font-medium text-on-surface underline-offset-4 hover:text-primary-strong hover:underline"
+            class="font-medium text-on-surface underline-offset-4 hover:text-alf-accent hover:underline"
           >
             {{ row.value }}
           </a>
