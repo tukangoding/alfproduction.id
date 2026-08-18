@@ -4,6 +4,7 @@ import type { ServicePackage } from '~/config/services'
 
 const props = defineProps<{
   pkg: ServicePackage
+  afterSalesSummary?: string
 }>()
 
 const ctaClasses = computed(() =>
@@ -55,6 +56,20 @@ const ctaClasses = computed(() =>
           <path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
         </svg>
         <span>{{ feature }}</span>
+      </li>
+      <li
+        v-if="afterSalesSummary"
+        class="flex items-start gap-2.5 text-sm text-on-surface"
+      >
+        <svg
+          class="mt-0.5 h-4 w-4 shrink-0 text-primary-strong"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+        </svg>
+        <span>{{ afterSalesSummary }}</span>
       </li>
     </ul>
 

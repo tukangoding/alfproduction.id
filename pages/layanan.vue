@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { servicePackages, includedServices } from '~/config/services'
+import {
+  servicePackages,
+  includedServices,
+  afterSalesServices,
+  afterSalesSummary
+} from '~/config/services'
 import { waLink, SITE_URL } from '~/config/site'
 import { pageKeywords } from '~/config/seo'
 
@@ -50,6 +55,7 @@ useHead({
         v-for="pkg in servicePackages"
         :key="pkg.id"
         :pkg="pkg"
+        :after-sales-summary="afterSalesSummary"
       />
     </div>
   </section>
@@ -76,6 +82,46 @@ useHead({
           </svg>
         </span>
         <p class="font-medium text-on-surface">{{ service }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
+    <SectionHeading title="After Sales Service" />
+
+    <div class="mx-auto mt-8 max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant">
+        Layanan Pendampingan Setelah Produksi
+      </p>
+      <p class="mt-2 text-base leading-normal text-on-surface-variant">
+        Komitmen ALF Production tidak berhenti setelah karya selesai. Kami memberikan layanan pendampingan untuk membantu lembaga menggunakan dan memanfaatkan Mars dengan baik.
+      </p>
+    </div>
+
+    <div class="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-3">
+      <div
+        v-for="service in afterSalesServices"
+        :key="service.id"
+        class="md-elevated-1 flex flex-col rounded-md-large bg-surface-container p-5"
+      >
+        <div class="flex items-start justify-between">
+          <h3 class="font-semibold text-on-surface">{{ service.title }}</h3>
+          <span
+            v-if="service.duration"
+            class="shrink-0 rounded-full bg-primary-container px-2.5 py-0.5 text-xs font-semibold text-on-primary-container"
+          >
+            {{ service.duration }}
+          </span>
+        </div>
+        <p class="mt-2 text-sm leading-normal text-on-surface-variant">
+          {{ service.description }}
+        </p>
+        <p
+          v-if="service.note"
+          class="mt-2 text-xs italic text-on-surface-variant"
+        >
+          {{ service.note }}
+        </p>
       </div>
     </div>
   </section>

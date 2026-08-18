@@ -8,6 +8,14 @@ export interface ServicePackage {
   featured: boolean
 }
 
+export interface AfterSalesService {
+  id: number
+  title: string
+  duration: string | null
+  description: string
+  note: string | null
+}
+
 export const servicePackages: ServicePackage[] = [
   {
     id: 'gold',
@@ -48,3 +56,34 @@ export const includedServices: string[] = [
   'Vocalis',
   'Mixing & mastering'
 ]
+
+export const afterSalesServices: AfterSalesService[] = [
+  {
+    id: 1,
+    title: 'Panduan Pemakaian Mars',
+    duration: null,
+    description:
+      'Klien mendapatkan panduan penggunaan Mars sebagai referensi dalam kegiatan dan kebutuhan lembaga.',
+    note: null
+  },
+  {
+    id: 2,
+    title: 'Garansi Revisi Minor',
+    duration: '30 Hari',
+    description:
+      'Kami memberikan garansi untuk perbaikan minor yang berkaitan dengan hasil produksi dalam waktu 30 hari setelah karya diserahterimakan.',
+    note:
+      'Garansi tidak mencakup perubahan konsep, lirik, melodi, aransemen, atau permintaan produksi baru.'
+  },
+  {
+    id: 3,
+    title: 'Pendampingan Pemakaian Mars',
+    duration: '14 Hari',
+    description:
+      'Selama 14 hari setelah karya diserahterimakan, ALF Production siap membantu memberikan arahan dan menjawab pertanyaan terkait penggunaan Mars dalam kegiatan lembaga.',
+    note: null
+  }
+]
+
+export const afterSalesSummary: string =
+  'After Sales: Garansi 30 Hari & Pendampingan 14 Hari'
