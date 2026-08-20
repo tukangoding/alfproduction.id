@@ -22,6 +22,7 @@ export const nav: NavItem[] = [
   { label: "Cara Pemesanan", to: "/cara-pemesanan", external: false },
   { label: "FAQ", to: "/faq", external: false },
   { label: "Kontak", to: "/kontak", external: false },
+  { label: "Artikel", to: "/artikel/mars-sekolah", external: false },
 ];
 
 export type SocialIconName = "instagram" | "youtube" | "website" | "whatsapp";

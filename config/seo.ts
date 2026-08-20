@@ -68,7 +68,14 @@ export const pageKeywords: Record<string, string[]> = {
     'hubungi pembuat mars hymne'
   ],
   '/kebijakan-privasi': ['kebijakan privasi'],
-  '/syarat-ketentuan': ['syarat dan ketentuan']
+  '/syarat-ketentuan': ['syarat dan ketentuan'],
+  '/artikel/mars-sekolah': [
+    'cara menulis lirik mars sekolah',
+    'contoh lirik mars sekolah',
+    'panduan mars sekolah',
+    'lirik mars sekolah islam terpadu',
+    'tips menulis mars sekolah'
+  ]
 }
 
 export interface ProfessionalServiceSchema {
