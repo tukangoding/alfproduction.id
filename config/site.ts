@@ -70,7 +70,7 @@ export function waLink(message?: string): string {
 }
 
 export const heroStats: string[] = [
-  "10+ Lagu Ciptaan",
+  "80+ Mars Lembaga",
   "100% Studio Grade",
   "Partitur Balok/Angka",
 ];

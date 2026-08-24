@@ -13,9 +13,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/syarat-ketentuan'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'Syarat & Ketentuan | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Syarat dan ketentuan layanan pembuatan Mars & Hymne oleh ALF Production — proses pemesanan, revisi, pembayaran, dan hak cipta karya.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/syarat-ketentuan` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/syarat-ketentuan/` }]
+  link: [{ rel: 'canonical', href: `${SITE_URL}/syarat-ketentuan` }]
 })
 </script>
 

@@ -27,9 +27,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/portofolio'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'Portofolio | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Dengarkan portofolio Mars & Hymne karya ALF Production untuk sekolah dan yayasan. Setiap karya membantu lembaga memiliki identitas yang berkarakter.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/portofolio` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/portofolio/` }],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/portofolio` }],
   script: itemListSchema
     ? [{ type: 'application/ld+json', children: JSON.stringify(itemListSchema) }]
     : []

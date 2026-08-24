@@ -13,9 +13,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/kebijakan-privasi'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'Kebijakan Privasi | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Kebijakan privasi ALF Production — bagaimana data Anda dikumpulkan, digunakan, dan dilindungi saat berkomunikasi melalui WhatsApp.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/kebijakan-privasi` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/kebijakan-privasi/` }]
+  link: [{ rel: 'canonical', href: `${SITE_URL}/kebijakan-privasi` }]
 })
 </script>
 

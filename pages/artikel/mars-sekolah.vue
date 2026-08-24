@@ -2,6 +2,28 @@
 import { SITE_URL } from '~/config/site'
 import { pageKeywords } from '~/config/seo'
 
+const ARTICLE_URL = `${SITE_URL}/artikel/mars-sekolah`
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline:
+    'Panduan Menulis & Contoh Lirik Mars Sekolah yang Menggugah Semangat',
+  description:
+    'Panduan lengkap menulis lirik mars sekolah beserta contoh siap adaptasi untuk sekolah umum maupun Islam terpadu.',
+  image: `${SITE_URL}/og-cover.jpg`,
+  inLanguage: 'id-ID',
+  author: { '@type': 'Organization', name: 'ALF Production', url: SITE_URL },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ALF Production',
+    logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` }
+  },
+  datePublished: '2026-08-20',
+  dateModified: '2026-08-20',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': ARTICLE_URL }
+}
+
 useHead({
   title: 'Panduan Menulis & Contoh Lirik Mars Sekolah yang Menggugah Semangat | ALF Production',
   meta: [
@@ -20,9 +42,16 @@ useHead({
       content: 'Panduan lengkap menulis lirik mars sekolah beserta contoh siap adaptasi untuk sekolah umum maupun Islam terpadu.'
     },
     { property: 'og:type', content: 'article' },
-    { property: 'og:url', content: `${SITE_URL}/artikel/mars-sekolah/` }
+    { property: 'og:url', content: ARTICLE_URL },
+    { property: 'article:published_time', content: '2026-08-20' }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/artikel/mars-sekolah/` }]
+  link: [{ rel: 'canonical', href: ARTICLE_URL }],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(articleSchema)
+    }
+  ]
 })
 </script>
 
@@ -45,6 +74,13 @@ useHead({
           Lagu Mars bukan sekadar pelengkap upacara bendera, melainkan instrumen
           pembentuk identitas, kebanggaan, dan penanaman visi lembaga kepada
           seluruh siswa dan guru.
+        </p>
+        <p
+          class="mt-6 flex items-center gap-2 text-sm text-on-surface-variant"
+        >
+          <span>ALF Production</span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-08-20">20 Agustus 2026</time>
         </p>
       </div>
     </section>
@@ -251,7 +287,7 @@ useHead({
       <section class="mt-12 border-t border-outline-soft pt-10">
         <DisqusComments
           page-id="mars-sekolah"
-          page-url="https://alfproduction.id/artikel/mars-sekolah/"
+          :page-url="`${SITE_URL}/artikel/mars-sekolah`"
           page-title="Panduan Menulis & Contoh Lirik Mars Sekolah yang Menggugah Semangat"
         />
       </section>

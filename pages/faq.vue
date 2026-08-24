@@ -14,9 +14,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/faq'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'FAQ | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Pertanyaan yang sering diajukan tentang jasa pembuatan Mars & Hymne sekolah, yayasan, dan lembaga oleh ALF Production — konsultasi gratis.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/faq` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/faq/` }],
+  link: [{ rel: 'canonical', href: `${SITE_URL}/faq` }],
   script: [
     {
       type: 'application/ld+json',

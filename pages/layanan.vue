@@ -19,9 +19,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/layanan'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'Layanan & Paket | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Paket pembuatan Mars & Hymne sekolah dan yayasan — GOLD, SILVER, BRONZE. Konsultasi gratis untuk kebutuhan lembaga Anda.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/layanan` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/layanan/` }]
+  link: [{ rel: 'canonical', href: `${SITE_URL}/layanan` }]
 })
 </script>
 

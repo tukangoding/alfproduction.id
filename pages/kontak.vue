@@ -13,9 +13,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/kontak'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'Kontak | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Hubungi ALF Production untuk pemesanan Mars & Hymne sekolah, yayasan, pesantren, dan lembaga — WhatsApp 0857-2795-6892 atau melalui formulir pemesanan.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/kontak` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/kontak/` }]
+  link: [{ rel: 'canonical', href: `${SITE_URL}/kontak` }]
 })
 
 const orderSteps = [

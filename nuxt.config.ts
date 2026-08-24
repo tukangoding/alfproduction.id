@@ -47,7 +47,8 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://alfproduction.id/' },
         { property: 'og:image', content: 'https://alfproduction.id/og-cover.jpg' },
         { name: 'geo.region', content: 'ID-JT' },
-        { name: 'geo.placename', content: 'Semarang' }
+        { name: 'geo.placename', content: 'Semarang' },
+        { name: 'twitter:card', content: 'summary_large_image' }
       ],
       link: [
         { rel: 'canonical', href: 'https://alfproduction.id/' },

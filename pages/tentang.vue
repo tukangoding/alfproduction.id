@@ -13,9 +13,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/tentang'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'Tentang Kami | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Kenali ALF Production, layanan produksi yang berfokus pada pembuatan Mars & Hymne untuk sekolah dan lembaga, dari tahapan musikal hingga audio siap pakai.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/tentang` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/tentang/` }]
+  link: [{ rel: 'canonical', href: `${SITE_URL}/tentang` }]
 })
 </script>
 

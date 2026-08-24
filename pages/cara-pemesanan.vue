@@ -13,9 +13,17 @@ useHead({
     {
       name: 'keywords',
       content: pageKeywords['/cara-pemesanan'].join(', ')
-    }
+    },
+    { property: 'og:title', content: 'Cara Pemesanan | ALF Production' },
+    {
+      property: 'og:description',
+      content:
+        'Simak cara pemesanan Mars & Hymne di ALF Production — dari konsultasi kebutuhan, pilih paket, brief, produksi, mixing & mastering, hingga finalisasi.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE_URL}/cara-pemesanan` }
   ],
-  link: [{ rel: 'canonical', href: `${SITE_URL}/cara-pemesanan/` }]
+  link: [{ rel: 'canonical', href: `${SITE_URL}/cara-pemesanan` }]
 })
 </script>
 

@@ -27,8 +27,8 @@ describe('site config', () => {
     )
   })
 
-  it('has exactly 7 nav items with no duplicate paths', () => {
-    expect(nav).toHaveLength(7)
+  it('has exactly 8 nav items with no duplicate paths', () => {
+    expect(nav).toHaveLength(8)
     const paths = nav.map((item) => item.to)
     expect(new Set(paths).size).toBe(paths.length)
   })
