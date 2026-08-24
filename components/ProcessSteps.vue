@@ -8,28 +8,32 @@ const steps: ProcessStep[] = [
   {
     title: 'Konsultasi kebutuhan lembaga',
     description:
-      'Sampaikan konsep, tujuan, karakter lembaga, dan kebutuhan produksi.'
+      'Ceritakan kebutuhan dan karakter lembaga Anda melalui WhatsApp atau video call. Kami akan membantu memahami kebutuhan Anda sebelum menentukan layanan.'
   },
   {
     title: 'Pilih paket produksi',
-    description: 'ALF Production membantu mengarahkan paket yang paling sesuai.'
+    description:
+      'Kami membantu mengarahkan paket yang paling sesuai dengan kebutuhan lembaga, sehingga Anda dapat memilih layanan dengan lebih yakin.'
   },
   {
     title: 'Brief & materi',
-    description: 'Lembaga menyerahkan materi sesuai paket.'
+    description:
+      'Sampaikan informasi, referensi, dan materi yang diperlukan. Kami akan membantu mengarahkan apa saja yang perlu disiapkan untuk proses produksi.'
   },
   {
     title: 'Proses produksi',
     description:
-      'Melodi/notasi, aransemen, recording vocal, vocalis, dan tahap produksi lain dikerjakan sesuai paket.'
+      'Lirik, melodi, aransemen, recording vocal, vokalis, dan tahap produksi lainnya dikerjakan sesuai paket dan kebutuhan lembaga.'
   },
   {
     title: 'Mixing & mastering',
-    description: 'Karya diproses menjadi audio final.'
+    description:
+      'Karya disempurnakan agar seluruh elemen musik dan vokal terdengar seimbang, jernih, dan siap digunakan.'
   },
   {
     title: 'Finalisasi',
-    description: 'Hasil akhir diserahkan kepada lembaga.'
+    description:
+      'Karya final diserahkan kepada lembaga setelah proses produksi selesai, disertai panduan dan pendampingan penggunaan.'
   }
 ]
 </script>

@@ -2,6 +2,24 @@
 import { waLink, SITE_URL } from '~/config/site'
 import { pageKeywords } from '~/config/seo'
 
+const highlights = [
+  {
+    title: '80+ Karya',
+    description:
+      'Telah memproduksi lebih dari 80 karya Mars dan Hymne untuk berbagai kebutuhan lembaga.'
+  },
+  {
+    title: '10+ Tahun Pengalaman',
+    description:
+      'Berpengalaman lebih dari 10 tahun dalam mengembangkan dan memproduksi karya musik untuk lembaga.'
+  },
+  {
+    title: 'Tim Musisi Profesional',
+    description:
+      'Dikerjakan oleh tim musisi aktif dan profesional yang memahami proses produksi musik secara menyeluruh.'
+  }
+]
+
 useHead({
   title: 'Tentang Kami | ALF Production',
   meta: [
@@ -52,8 +70,23 @@ useHead({
   </section>
 
   <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <article
+        v-for="highlight in highlights"
+        :key="highlight.title"
+        class="md-elevated-1 rounded-md-large bg-surface-container p-5"
+      >
+        <h2 class="text-lg font-semibold text-on-surface">
+          {{ highlight.title }}
+        </h2>
+        <p class="mt-2 text-sm leading-normal text-on-surface-variant">
+          {{ highlight.description }}
+        </p>
+      </article>
+    </div>
+
     <div class="mx-auto max-w-3xl">
-      <p class="text-lg leading-normal text-on-surface">
+      <p class="mt-10 text-lg leading-normal text-on-surface">
         ALF Production adalah layanan produksi yang berfokus pada pembuatan
         Mars &amp; Hymne untuk sekolah dan lembaga. Kami membantu lembaga
         memilih kebutuhan produksi yang sesuai, kemudian mengolahnya melalui

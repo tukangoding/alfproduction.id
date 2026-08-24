@@ -5,6 +5,7 @@ import { waLink } from '~/config/site'
 const pesanOptions = [
   'Pembuatan Mars',
   'Pembuatan Hymne',
+  'Pembuatan Mars dan Hymne',
   'Konsultasi',
   'Lainnya'
 ]
@@ -32,7 +33,7 @@ function composeMessage(): string {
 
 const fieldLabels: Record<Exclude<keyof typeof form.value, 'subject'>, string> =
   {
-    organization: 'Nama Organisasi/Perusahaan',
+    organization: 'Nama Lembaga',
     picName: 'Nama PIC',
     whatsapp: 'WhatsApp',
     email: 'Email',
@@ -50,7 +51,7 @@ function onSubmit(): void {
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
       <div class="flex flex-col gap-2">
         <label for="lead-organization" class="text-sm font-medium text-on-surface">
-          Nama Organisasi/Perusahaan
+          Nama Lembaga
         </label>
         <input
           id="lead-organization"
