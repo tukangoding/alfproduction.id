@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {
   servicePackages,
-  includedServices,
+  includedServiceDetails,
   afterSalesServices,
   afterSalesSummary
 } from '~/config/services'
@@ -71,11 +71,11 @@ useHead({
   <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading title="Layanan yang Termasuk" />
 
-    <div class="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-3">
+    <div class="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2">
       <div
-        v-for="service in includedServices"
-        :key="service"
-        class="md-elevated-1 flex items-center gap-3 rounded-md-large bg-surface-container p-4"
+        v-for="service in includedServiceDetails"
+        :key="service.title"
+        class="md-elevated-1 flex items-start gap-3 rounded-md-large bg-surface-container p-5"
       >
         <span
           class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary"
@@ -89,7 +89,12 @@ useHead({
             <path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
           </svg>
         </span>
-        <p class="font-medium text-on-surface">{{ service }}</p>
+        <div>
+          <h3 class="font-semibold text-on-surface">{{ service.title }}</h3>
+          <p class="mt-1 text-sm leading-normal text-on-surface-variant">
+            {{ service.description }}
+          </p>
+        </div>
       </div>
     </div>
   </section>

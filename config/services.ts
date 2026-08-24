@@ -16,6 +16,11 @@ export interface AfterSalesService {
   note: string | null
 }
 
+export interface IncludedServiceDetail {
+  title: string
+  description: string
+}
+
 export const servicePackages: ServicePackage[] = [
   {
     id: 'gold',
@@ -55,6 +60,39 @@ export const includedServices: string[] = [
   'Recording vocal',
   'Vocalis',
   'Mixing & mastering'
+]
+
+export const includedServiceDetails: IncludedServiceDetail[] = [
+  {
+    title: 'Lirik',
+    description:
+      'Merangkai identitas, nilai, visi, dan semangat lembaga dalam lirik yang kuat dan mudah diingat.'
+  },
+  {
+    title: 'Melodi',
+    description:
+      'Menciptakan melodi yang kuat dan berkarakter, sehingga Mars atau Hymne memiliki ciri khas dan mudah dikenali.'
+  },
+  {
+    title: 'Aransemen',
+    description:
+      'Mengolah melodi menjadi musik yang utuh dengan karakter yang sesuai identitas lembaga.'
+  },
+  {
+    title: 'Recording Vocal',
+    description:
+      'Merekam vokal secara profesional agar terdengar jelas, rapi, dan siap digunakan.'
+  },
+  {
+    title: 'Vokalis',
+    description:
+      'Menyediakan vokal yang sesuai dengan karakter dan kebutuhan Mars atau Hymne lembaga.'
+  },
+  {
+    title: 'Mixing & Mastering',
+    description:
+      'Menyeimbangkan dan menyempurnakan seluruh elemen audio agar terdengar jernih dan profesional.'
+  }
 ]
 
 export const afterSalesServices: AfterSalesService[] = [

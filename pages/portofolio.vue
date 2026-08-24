@@ -5,16 +5,23 @@ import { buildItemListSchema, pageKeywords } from '~/config/seo'
 
 const itemListSchema = buildItemListSchema()
 
-const activeFilter = ref(portfolioFilters[0] ?? 'Semua')
+const displayFilters = portfolioFilters.map((filter) =>
+  filter === 'Lembaga' ? 'Organisasi' : filter
+)
 
-const filteredItems = computed(() =>
-  portfolioItems.filter(
+const activeFilter = ref(displayFilters[0] ?? 'Semua')
+
+const filteredItems = computed(() => {
+  const selectedType =
+    activeFilter.value === 'Organisasi' ? 'Lembaga' : activeFilter.value
+
+  return portfolioItems.filter(
     (item) =>
       activeFilter.value === 'Semua' ||
       item.category === activeFilter.value ||
-      item.type === activeFilter.value
+      item.type === selectedType
   )
-)
+})
 
 useHead({
   title: 'Portofolio | ALF Production',
@@ -71,7 +78,7 @@ useHead({
 
   <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <div class="flex justify-center">
-      <FilterTabs v-model="activeFilter" :filters="portfolioFilters" />
+      <FilterTabs v-model="activeFilter" :filters="displayFilters" />
     </div>
 
     <PortfolioGrid v-if="filteredItems.length" class="mt-8" :items="filteredItems" />

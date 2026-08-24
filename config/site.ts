@@ -72,7 +72,7 @@ export function waLink(message?: string): string {
 export const heroStats: string[] = [
   "80+ Mars Lembaga",
   "100% Studio Grade",
-  "Partitur Balok/Angka",
+  "10+ tahun pengalaman",
 ];
 
 export const whyUs: string[] = [
