@@ -1,11 +1,42 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
 import { clientLogos } from '~/config/clients'
 
 const marqueeLogos = [...clientLogos, ...clientLogos]
+const sectionRef = ref<HTMLElement | null>(null)
+const shouldLoadLogos = ref(false)
+let observer: IntersectionObserver | null = null
+
+onMounted(() => {
+  const section = sectionRef.value
+  if (!section || !('IntersectionObserver' in window)) {
+    shouldLoadLogos.value = true
+    return
+  }
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return
+      shouldLoadLogos.value = true
+      observer?.disconnect()
+      observer = null
+    },
+    { rootMargin: '100px 0px' }
+  )
+  observer.observe(section)
+})
+
+onUnmounted(() => {
+  observer?.disconnect()
+  observer = null
+})
 </script>
 
 <template>
-  <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
+  <section
+    ref="sectionRef"
+    class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6"
+  >
     <SectionHeading
       :title="'Dipercaya oleh Lembaga & Institusi di Indonesia'"
       subtitle="Sekolah, yayasan, dan lembaga di berbagai daerah telah mempercayakan karya Mars &amp; Hymne mereka kepada ALF Production."
@@ -16,7 +47,10 @@ const marqueeLogos = [...clientLogos, ...clientLogos]
       role="list"
       aria-label="Logo lembaga dan institusi klien ALF Production"
     >
-      <div class="marquee-track flex w-max items-center gap-6 md:gap-12">
+      <div
+        v-if="shouldLoadLogos"
+        class="marquee-track flex w-max items-center gap-6 md:gap-12"
+      >
         <div
           v-for="(logo, index) in marqueeLogos"
           :key="`${logo.src}-${index}`"
@@ -32,6 +66,12 @@ const marqueeLogos = [...clientLogos, ...clientLogos]
           />
         </div>
       </div>
+
+      <div
+        v-else
+        class="h-[clamp(8rem,9vw,9.5rem)]"
+        aria-hidden="true"
+      />
 
       <div
         class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface to-transparent"

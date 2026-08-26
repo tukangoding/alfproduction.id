@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { waLink } from '~/config/site'
+import { trackAnalyticsEvent } from '~/composables/useAnalytics'
 
 const pesanOptions = [
   'Pembuatan Mars',
@@ -42,6 +43,10 @@ const fieldLabels: Record<Exclude<keyof typeof form.value, 'subject'>, string> =
   }
 
 function onSubmit(): void {
+  trackAnalyticsEvent('generate_lead', {
+    lead_source: 'contact_form',
+    service_interest: form.value.subject
+  })
   window.open(waLink(composeMessage()), '_blank', 'noopener')
 }
 </script>

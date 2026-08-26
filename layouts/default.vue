@@ -1,12 +1,13 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <AppHeader />
+    <LazyAppHeader hydrate-on-interaction />
     <main class="flex-1">
       <slot />
     </main>
-    <AppFooter />
-    <WhatsAppFloat />
+    <LazyAppFooter hydrate-never />
+    <LazyWhatsAppFloat hydrate-never />
     <StickyAudioPlayer />
-    <CinematicCanvas />
+    <LazyCinematicCanvas hydrate-on-media-query="(min-width: 768px)" />
+    <LazyAnalyticsConsent hydrate-on-idle />
   </div>
 </template>

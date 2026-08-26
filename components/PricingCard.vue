@@ -80,6 +80,7 @@ const ctaClasses = computed(() =>
     <div class="mt-5 flex flex-1 items-end">
       <a
         :href="waLink(`Halo ALF Production, saya ingin konsultasi paket ${pkg.name} (${pkg.price}) untuk pembuatan Mars/Hymne.`)"
+        :data-package-id="pkg.id"
         target="_blank"
         rel="noopener"
         class="w-full"

@@ -3,7 +3,6 @@ import { heroStats, waLink, whyUs, SITE_URL } from '~/config/site'
 import { portfolioItems } from '~/config/portfolio'
 import { faqItems } from '~/config/faq'
 import { pageKeywords } from '~/config/seo'
-import heroImg from '~/assets/hero.png'
 
 const textLinkClass =
   'inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong transition-colors hover:underline hover:decoration-primary-strong hover:underline-offset-4'
@@ -81,15 +80,27 @@ useHead({
         <div
           class="order-first mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl lg:order-none lg:max-w-none"
         >
-          <img
-            :src="heroImg"
-            alt="Peralatan studio produksi musik ALF Production"
-            width="500"
-            height="500"
-            fetchpriority="high"
-            decoding="async"
-            class="h-full w-full object-cover"
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcset="/images/hero-480.avif 480w, /images/hero-800.avif 800w, /images/hero-1200.avif 1200w"
+              sizes="(min-width: 1024px) 548px, (min-width: 640px) 384px, calc(100vw - 2rem)"
+            />
+            <source
+              type="image/webp"
+              srcset="/images/hero-480.webp 480w, /images/hero-800.webp 800w, /images/hero-1200.webp 1200w"
+              sizes="(min-width: 1024px) 548px, (min-width: 640px) 384px, calc(100vw - 2rem)"
+            />
+            <img
+              src="/images/hero-800.jpg"
+              alt="Peralatan studio produksi musik ALF Production"
+              width="800"
+              height="800"
+              fetchpriority="high"
+              decoding="sync"
+              class="h-full w-full object-cover"
+            />
+          </picture>
         </div>
       </div>
     </div>
@@ -121,7 +132,7 @@ useHead({
     </div>
   </section>
 
-  <ClientLogos />
+  <LazyClientLogos hydrate-on-visible />
 
   <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading
@@ -130,7 +141,11 @@ useHead({
       subtitle="Lihat dan dengarkan beberapa karya Mars &amp; Hymne yang telah diproduksi oleh ALF Production."
     />
 
-    <PortfolioGrid class="mt-8" :items="portfolioItems.slice(0, 3)" />
+    <LazyPortfolioGrid
+      hydrate-on-visible
+      class="mt-8"
+      :items="portfolioItems.slice(0, 3)"
+    />
 
     <div class="mt-6 text-center">
       <NuxtLink to="/portofolio" :class="textLinkClass">Lihat Portofolio</NuxtLink>
@@ -140,7 +155,7 @@ useHead({
   <section class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6">
     <SectionHeading eyebrow="Proses" title="Dari Ide Menjadi Karya Lembaga." />
 
-    <ProcessSteps class="mt-8" />
+    <LazyProcessSteps hydrate-never class="mt-8" />
 
     <div class="mt-6 text-center">
       <NuxtLink to="/cara-pemesanan" :class="textLinkClass">
@@ -153,7 +168,7 @@ useHead({
     <SectionHeading eyebrow="FAQ" title="Pertanyaan yang Sering Diajukan" />
 
     <div class="mx-auto mt-8 max-w-3xl">
-      <FaqAccordion :items="faqItems.slice(0, 3)" />
+      <LazyFaqAccordion hydrate-on-visible :items="faqItems.slice(0, 3)" />
     </div>
 
     <div class="mt-6 text-center">

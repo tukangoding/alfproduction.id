@@ -24,10 +24,10 @@ const musicianStatusText = computed(() =>
           aria-hidden="true"
         />
         <img
-          src="/alief.png"
+          src="/images/founder.webp"
           alt="Foto founder ALF Production"
-          width="500"
-          height="500"
+          width="640"
+          height="640"
           loading="lazy"
           decoding="async"
           class="relative h-auto w-full rounded-full"

@@ -20,6 +20,7 @@ logs
 *.local
 .env
 .env.*
+!.env.example
 
 # Project tooling
 .superpowers/
@@ -31,3 +32,7 @@ public/favicon_io.zip
 assets/'Kuesioner Teknis Website Komposer Alfaproduction.pdf'
 # Progress notes (local only)
 PROGRESS.md
+
+# Generated Lighthouse artifacts (summary stays tracked)
+reports/lighthouse/*.report.html
+reports/lighthouse/*.report.json

@@ -44,7 +44,7 @@ useHead({
         </h1>
 
         <p class="mt-4 text-sm text-on-surface-variant">
-          Terakhir diperbarui: 13 Agustus 2026
+          Terakhir diperbarui: 26 Agustus 2026
         </p>
       </div>
     </div>
@@ -84,6 +84,17 @@ useHead({
         Komunikasi antara Anda dan kami terjadi melalui WhatsApp; kebijakan
         privasi WhatsApp berlaku untuk layanan tersebut. Konten portofolio
         di-hosting di YouTube dan tunduk pada kebijakan YouTube.
+      </p>
+
+      <h2 class="mt-6 text-xl font-semibold text-on-surface">
+        Analitik Situs
+      </h2>
+      <p class="mt-2 text-on-surface-variant leading-relaxed">
+        Dengan persetujuan Anda, kami menggunakan Google Analytics untuk
+        mengukur kunjungan halaman dan interaksi seperti pemutaran portofolio
+        serta klik tombol WhatsApp. Nama, nomor WhatsApp, alamat email, dan isi
+        formulir tidak dikirim ke layanan analitik. Anda dapat menolak analitik
+        melalui pilihan yang ditampilkan saat pertama kali mengunjungi situs.
       </p>
 
       <h2 class="mt-6 text-xl font-semibold text-on-surface">

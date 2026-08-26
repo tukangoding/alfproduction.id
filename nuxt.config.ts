@@ -1,5 +1,10 @@
 export default defineNuxtConfig({
   ssr: true,
+  runtimeConfig: {
+    public: {
+      gaMeasurementId: process.env.NUXT_PUBLIC_GA_MEASUREMENT_ID ?? ''
+    }
+  },
   modules: ['@nuxtjs/sitemap'],
   site: { url: 'https://alfproduction.id/' },
   sitemap: {

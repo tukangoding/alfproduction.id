@@ -3,7 +3,7 @@ export interface ClientLogo {
   name: string
 }
 
-export const clientLogos: ClientLogo[] = [
+const sourceClientLogos: ClientLogo[] = [
   { src: '/logo-klien/Logo-Abi-Ummi.png', name: 'Abi Ummi' },
   { src: '/logo-klien/Logo-Al-Barokah-Wal-Hikmah.png', name: 'Al Barokah Wal Hikmah' },
   { src: '/logo-klien/Logo-Al-Fityah.png', name: 'Al Fityah' },
@@ -41,3 +41,10 @@ export const clientLogos: ClientLogo[] = [
   { src: '/logo-klien/Logo-YPIT-Al-Huda-Wonogiri.png', name: 'YPIT Al Huda Wonogiri' },
   { src: '/logo-klien/SDIT-Nurul-Islam-Kudus.png', name: 'SDIT Nurul Islam Kudus' }
 ]
+
+export const clientLogos: ClientLogo[] = sourceClientLogos.map((logo) => ({
+  ...logo,
+  src: logo.src
+    .replace('/logo-klien/', '/logo-klien/optimized/')
+    .replace(/\.png$/i, '.webp')
+}))

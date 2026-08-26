@@ -10,7 +10,7 @@
   --md-sys-color-surface-container-high: #e9ecf1;
   --md-sys-color-primary: #accd21;
   --md-sys-color-on-primary: #1b2500;
-  --md-sys-color-primary-strong: #587400;
+  --md-sys-color-primary-strong: #466000;
   --md-sys-color-primary-container: #e9f5c0;
   --md-sys-color-on-primary-container: #2a3a00;
   --md-sys-color-secondary: #d4af37;
@@ -19,7 +19,7 @@
   --md-sys-color-tertiary: #4a90e2;
   --md-sys-color-on-tertiary: #ffffff;
   --md-sys-color-on-surface: #1a1d23;
-  --md-sys-color-on-surface-variant: #5f6b7a;
+  --md-sys-color-on-surface-variant: #4f5a68;
   --md-sys-color-outline: #c9cfd8;
   --md-sys-color-outline-soft: #e5e5ea;
   --md-sys-color-surface-translucent: rgba(247, 248, 250, 0.85);
@@ -46,6 +46,11 @@
 
   [id] {
     scroll-margin-top: 5rem;
+  }
+
+  main > section:nth-of-type(n + 3) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
   }
 }
 

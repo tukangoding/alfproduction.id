@@ -1,98 +1,113 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 
+interface Particle {
+  x: number
+  y: number
+  radius: number
+  speed: number
+  drift: number
+  opacity: number
+}
+
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
-let renderer: import('three').WebGLRenderer | null = null
 let animationFrameId = 0
-let observer: IntersectionObserver | null = null
-let disposed = false
+let idleTimer = 0
+let idleCallbackId = 0
+let particles: Particle[] = []
+let lastFrame = 0
+let cleanup: (() => void) | null = null
 
-function shouldRender(): boolean {
-  return (
-    typeof window !== 'undefined' &&
-    window.innerWidth >= 768 &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  )
+function prefersReducedMotion(): boolean {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
+
+function startParticles(canvas: HTMLCanvasElement) {
+  const context = canvas.getContext('2d', { alpha: true })
+  if (!context) return
+
+  const resize = () => {
+    const scale = Math.min(window.devicePixelRatio || 1, 1.25)
+    canvas.width = Math.round(window.innerWidth * scale)
+    canvas.height = Math.round(window.innerHeight * scale)
+    canvas.style.width = `${window.innerWidth}px`
+    canvas.style.height = `${window.innerHeight}px`
+    context.setTransform(scale, 0, 0, scale, 0, 0)
+
+    const particleCount = Math.min(72, Math.max(36, Math.round(window.innerWidth / 22)))
+    particles = Array.from({ length: particleCount }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      radius: 0.6 + Math.random() * 1.4,
+      speed: 0.04 + Math.random() * 0.1,
+      drift: (Math.random() - 0.5) * 0.04,
+      opacity: 0.12 + Math.random() * 0.22
+    }))
+  }
+
+  const render = (time: number) => {
+    animationFrameId = window.requestAnimationFrame(render)
+    if (document.hidden || time - lastFrame < 42) return
+    lastFrame = time
+
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight)
+    for (const particle of particles) {
+      particle.y -= particle.speed
+      particle.x += particle.drift
+
+      if (particle.y < -4) particle.y = window.innerHeight + 4
+      if (particle.x < -4) particle.x = window.innerWidth + 4
+      if (particle.x > window.innerWidth + 4) particle.x = -4
+
+      context.beginPath()
+      context.fillStyle = `rgba(107, 138, 16, ${particle.opacity})`
+      context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2)
+      context.fill()
+    }
+  }
+
+  resize()
+  window.addEventListener('resize', resize, { passive: true })
+  animationFrameId = window.requestAnimationFrame(render)
+
+  cleanup = () => {
+    window.removeEventListener('resize', resize)
+    if (animationFrameId) window.cancelAnimationFrame(animationFrameId)
+    animationFrameId = 0
+    particles = []
+  }
 }
 
 onMounted(() => {
-  if (!shouldRender()) return
+  if (window.innerWidth < 768 || prefersReducedMotion()) return
 
   const canvas = canvasRef.value
   if (!canvas) return
 
-  observer = new IntersectionObserver((entries) => {
-    if (!entries.some((entry) => entry.isIntersecting)) return
-    observer?.disconnect()
-    observer = null
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(() => void loadParticles(canvas), { timeout: 4000 })
-    } else {
-      window.setTimeout(() => void loadParticles(canvas), 4000)
-    }
-  })
-  observer.observe(canvas)
+  if ('requestIdleCallback' in window) {
+    idleCallbackId = window.requestIdleCallback(() => startParticles(canvas), {
+      timeout: 2500
+    })
+  } else {
+    idleTimer = window.setTimeout(() => startParticles(canvas), 1200)
+  }
 })
 
-async function loadParticles(canvas: HTMLCanvasElement) {
-  const THREE = await import('three')
-  if (disposed) return
-
-  const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  )
-  camera.position.z = 5
-
-  renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false })
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
-  renderer.setSize(window.innerWidth, window.innerHeight)
-
-  const geometry = new THREE.BufferGeometry()
-  const count = 200
-  const positions = new Float32Array(count * 3)
-  for (let i = 0; i < positions.length; i++) {
-    positions[i] = (Math.random() - 0.5) * 10
-  }
-  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
-
-  const material = new THREE.PointsMaterial({
-    color: '#6b8a10',
-    size: 0.045,
-    transparent: true,
-    opacity: 0.35
-  })
-
-  const points = new THREE.Points(geometry, material)
-  scene.add(points)
-
-  const animate = () => {
-    if (disposed) return
-    animationFrameId = requestAnimationFrame(animate)
-    points.rotation.y += 0.001
-    renderer?.render(scene, camera)
-  }
-  animate()
-}
-
 onUnmounted(() => {
-  disposed = true
-  observer?.disconnect()
-  observer = null
-  if (animationFrameId) cancelAnimationFrame(animationFrameId)
-  renderer?.dispose()
-  renderer = null
+  if (idleTimer) window.clearTimeout(idleTimer)
+  if (idleCallbackId && 'cancelIdleCallback' in window) {
+    window.cancelIdleCallback(idleCallbackId)
+  }
+  cleanup?.()
+  cleanup = null
 })
 </script>
 
 <template>
   <div
     aria-hidden="true"
-    class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+    class="pointer-events-none fixed inset-0 -z-10 hidden overflow-hidden md:block"
   >
     <div class="cinematic-gradient absolute inset-0" />
     <canvas ref="canvasRef" class="h-full w-full opacity-30" />

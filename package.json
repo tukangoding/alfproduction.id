@@ -1,6 +1,7 @@
 {
   "name": "alfproduction.id",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "description": "Jasa Bikin Mars & Hymne Sekolah / Yayasan | ALF Production",
   "scripts": {
@@ -9,22 +10,28 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test": "vitest run"
+    "test": "vitest run",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "audit:lighthouse": "lighthouse http://127.0.0.1:3000/ --chrome-path=/usr/bin/google-chrome --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' --output=html --output=json --output-path=reports/lighthouse/latest-mobile",
+    "audit:lighthouse:desktop": "lighthouse http://127.0.0.1:3000/ --chrome-path=/usr/bin/google-chrome --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' --preset=desktop --output=html --output=json --output-path=reports/lighthouse/latest-desktop"
   },
   "dependencies": {
     "@nuxtjs/sitemap": "^8.3.4",
-    "nuxt": "^3.21.11",
-    "three": "^0.185.1",
+    "nuxt": "^4.5.2",
     "vue": "^3.5.41",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
+    "@golar/vue": "^0.1.10",
     "@vue/test-utils": "^2.4.11",
     "autoprefixer": "^10.5.4",
     "cssnano": "^8.0.5",
+    "golar": "^0.1.10",
     "jsdom": "^29.1.1",
+    "lighthouse": "^13.4.1",
     "postcss": "^8.5.26",
+    "sharp": "^0.35.3",
     "tailwindcss": "^3.4.19",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10"
