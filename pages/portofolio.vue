@@ -46,7 +46,7 @@ useHead({
   ],
   link: [{ rel: 'canonical', href: `${SITE_URL}/portofolio` }],
   script: itemListSchema
-    ? [{ type: 'application/ld+json', children: JSON.stringify(itemListSchema) }]
+    ? [{ type: 'application/ld+json', textContent: JSON.stringify(itemListSchema) }]
     : []
 })
 </script>

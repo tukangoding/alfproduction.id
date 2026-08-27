@@ -28,7 +28,7 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify(buildFaqPageSchema())
+      textContent: JSON.stringify(buildFaqPageSchema())
     }
   ]
 })

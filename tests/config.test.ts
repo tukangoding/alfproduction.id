@@ -20,7 +20,7 @@ describe('site config', () => {
 
   it('prefills the default message when none is given', () => {
     const url = waLink()
-    const encoded = url.split('?text=')[1]
+    const encoded = url.split('?text=')[1] ?? ''
     expect(encoded).toBeDefined()
     expect(decodeURIComponent(encoded)).toBe(
       'Halo ALF Production, saya ingin konsultasi pembuatan Mars/Hymne...'

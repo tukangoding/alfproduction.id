@@ -5,9 +5,8 @@
       <slot />
     </main>
     <LazyAppFooter hydrate-never />
-    <LazyWhatsAppFloat hydrate-never />
-    <StickyAudioPlayer />
-    <LazyCinematicCanvas hydrate-on-media-query="(min-width: 768px)" />
-    <LazyAnalyticsConsent hydrate-on-idle />
   </div>
+  <LazyWhatsAppFloat hydrate-never />
+  <StickyAudioPlayer />
+  <LazyAnalyticsConsent hydrate-on-idle />
 </template>

@@ -11,6 +11,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "vitest run",
+    "typecheck": "nuxt typecheck",
     "optimize:images": "node scripts/optimize-images.mjs",
     "audit:lighthouse": "lighthouse http://127.0.0.1:3000/ --chrome-path=/usr/bin/google-chrome --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' --output=html --output=json --output-path=reports/lighthouse/latest-mobile",
     "audit:lighthouse:desktop": "lighthouse http://127.0.0.1:3000/ --chrome-path=/usr/bin/google-chrome --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' --preset=desktop --output=html --output=json --output-path=reports/lighthouse/latest-desktop"
@@ -19,7 +20,7 @@
     "@nuxtjs/sitemap": "^8.3.4",
     "nuxt": "^4.5.2",
     "vue": "^3.5.41",
-    "vue-router": "^4.6.4"
+    "vue-router": "^5.2.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",

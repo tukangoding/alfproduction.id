@@ -25,7 +25,7 @@ describe('LeadForm', () => {
     await wrapper.trigger('submit')
 
     const url = openSpy.mock.calls[0][0] as string
-    const text = decodeURIComponent(url.split('?text=')[1])
+    const text = decodeURIComponent(url.split('?text=')[1] ?? '')
     expect(text).toContain('Bentuk Kebutuhan: Pembuatan Mars')
     expect(text).toContain('Halo ALF Production, saya ingin memesan pembuatan Mars/Hymne.')
   })

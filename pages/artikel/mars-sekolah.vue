@@ -49,7 +49,7 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify(articleSchema)
+      textContent: JSON.stringify(articleSchema)
     }
   ]
 })

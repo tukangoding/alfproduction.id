@@ -34,7 +34,7 @@ export const siteKeywords: string[] = [
   'biaya pembuatan hymne sekolah semarang jakarta'
 ]
 
-export const pageKeywords: Record<string, string[]> = {
+export const pageKeywords = {
   '/': [
     'jasa bikin mars hymne semarang',
     'jasa bikin lagu mars jakarta',
@@ -76,7 +76,7 @@ export const pageKeywords: Record<string, string[]> = {
     'lirik mars sekolah islam terpadu',
     'tips menulis mars sekolah'
   ]
-}
+} satisfies Record<string, string[]>
 
 export interface ProfessionalServiceSchema {
   '@context': string

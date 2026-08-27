@@ -120,7 +120,7 @@ describe('useAudioPlayer', () => {
 
   it('reuses the constructed player instance and loads the new video on track switch', async () => {
     await play(track1)
-    const player = FakeYoutubePlayer.instances[0]
+    const player = FakeYoutubePlayer.instances[0]!
     player.calls.length = 0
 
     await play(track2)
@@ -131,7 +131,7 @@ describe('useAudioPlayer', () => {
 
   it('togglePlay pauses when playing and plays when paused', async () => {
     await play(track1)
-    const player = FakeYoutubePlayer.instances[0]
+    const player = FakeYoutubePlayer.instances[0]!
     player.calls.length = 0
 
     expect(playerApi.isPlaying.value).toBe(false)
@@ -147,7 +147,7 @@ describe('useAudioPlayer', () => {
 
   it('closePlayer hides the bar and stops playback', async () => {
     await play(track1)
-    const player = FakeYoutubePlayer.instances[0]
+    const player = FakeYoutubePlayer.instances[0]!
     player.fireState(1)
 
     expect(playerApi.isOpen.value).toBe(true)

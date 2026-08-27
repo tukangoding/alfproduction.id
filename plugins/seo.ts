@@ -9,15 +9,15 @@ export default defineNuxtPlugin(() => {
     script: [
       {
         type: 'application/ld+json',
-        children: JSON.stringify(buildProfessionalServiceSchema())
+        textContent: JSON.stringify(buildProfessionalServiceSchema())
       },
       {
         type: 'application/ld+json',
-        children: JSON.stringify(buildServiceCatalogSchema())
+        textContent: JSON.stringify(buildServiceCatalogSchema())
       },
       {
         type: 'application/ld+json',
-        children: JSON.stringify(buildWebSiteSchema())
+        textContent: JSON.stringify(buildWebSiteSchema())
       }
     ]
   })

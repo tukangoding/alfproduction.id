@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useAudioPlayer } from '~/composables/useAudioPlayer'
 import { trackAnalyticsEvent } from '~/composables/useAnalytics'
+import type { Track } from '~/composables/useAudioPlayer'
 
 const props = withDefaults(
   defineProps<{
-    track: { id: string; youtubeId: string; title: string; client: string }
+    track: Track
     size?: number
   }>(),
   { size: 56 }

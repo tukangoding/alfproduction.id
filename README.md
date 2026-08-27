@@ -1,49 +1,79 @@
 # ALF Production — alfproduction.id
 
-Website portofolio studio produksi **Mars & Hymne** sekolah/yayasan (Semarang, Indonesia). Dibangun dengan **Nuxt 3 (SSG)**, **Tailwind CSS**, kanvas **Three.js** (lazy-load), **sticky YouTube player**, dan alur kontak berbasis **WhatsApp**.
+Website portofolio studio produksi **Mars & Hymne** sekolah/yayasan. Dibangun dengan **Nuxt 4 (SSG)**, **Tailwind CSS**, pemutar YouTube, dan alur kontak berbasis **WhatsApp**.
 
 ## Development
 
 ```bash
-npm install        # install dependencies
-npm run dev        # dev server (http://localhost:3000)
-npm test           # vitest unit tests
-npm run generate   # build static site ke dist/
+npm install
+npm run dev
+npm run typecheck
+npm test
+npm run generate
 ```
 
-## Build & Deploy ke Hostinger
+Hasil static generation berada di `.output/public/`.
 
-1. Jalankan `npm run generate` — hasilnya di folder `dist/`.
-2. Upload **seluruh isi** `dist/` ke folder `public_html/` di Hostinger (via FTP/File Manager atau SSH `rsync`/`scp`).
-3. `.htaccess` (force HTTPS, GZIP, browser caching, security headers) sudah termasuk dalam `dist/` — tidak perlu dibuat manual.
-4. Selesai. Situs dilayani langsung sebagai HTML statis; **tidak perlu Node.js di server**.
+## Optimasi gambar
 
-## Verifikasi Setelah Deploy
+Gambar sumber disimpan di `assets/hero.png`, `public/alief.png`, dan `public/logo-klien/`. Bangkitkan ulang varian AVIF/WebP/JPEG setelah sumber berubah:
 
-- Buka https://alfproduction.id/ — cek halaman dimuat.
-- Cek redirect HTTP → HTTPS berfungsi (buka http://alfproduction.id, harus redirect 301).
-- Cek `https://alfproduction.id/sitemap.xml` dan `https://alfproduction.id/robots.txt` dapat diakses.
+```bash
+npm run optimize:images
+```
 
-## Google Search Console
+Jalankan `npm run generate` setelahnya. Jangan menghapus gambar sumber karena script optimasi membutuhkannya.
 
-1. Tambahkan properti **domain** `alfproduction.id`.
-2. Verifikasi via **DNS TXT record** (di cPanel Hostinger → DNS Zone Editor).
-3. Submit `sitemap.xml` di menu **Sitemaps**.
-4. Minta indexing untuk 7 URL indexable: `/`, `/layanan`, `/portofolio`, `/tentang`, `/cara-pemesanan`, `/faq`, `/kontak` (`/kebijakan-privasi` & `/syarat-ketentuan` sengaja di-block di `robots.txt`).
+## Google Analytics 4
 
-## Google Business Profile
+1. Salin `.env.example` menjadi `.env`.
+2. Buat GA4 Web Data Stream untuk `https://alfproduction.id`.
+3. Isi `NUXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX`.
+4. Jalankan ulang build dan deploy.
 
-1. Buat/klaim profil bisnis (area Semarang) di Google Business Profile.
-2. Tambahkan link website `https://alfproduction.id`.
-3. Jaga NAP (Name, Address, Phone) konsisten dengan situs.
+Jika ID kosong, script Google Analytics tidak dimuat dan banner persetujuan tidak muncul. Jika ID terisi, analytics baru dimuat setelah pengunjung memilih **Izinkan**. Event yang tersedia:
 
-## Script Pengaturan Konten
+- `page_view` — kunjungan halaman;
+- `whatsapp_click` — klik CTA WhatsApp, termasuk lokasi CTA dan paket bila relevan;
+- `generate_lead` — formulir pemesanan diteruskan ke WhatsApp;
+- `portfolio_play` — pemutaran contoh portofolio.
 
-- **Portofolio dari YouTube**: `node scripts/extract-youtube.mjs` — mengambil daftar video kanal `@alfproduction-id`, menyaring judul ber-"Mars" (mengabaikan yang ber-"Penjelasan"), lalu menulis `config/portfolio.ts`. Jalankan ulang setiap ada video baru (opsional: `--year 2026`, `--input <file HTML>` untuk offline).
-- **Favicon**: `node scripts/generate-favicons.mjs` — membangkitkan set ikon (`favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`, `android-chrome-*`) + `site.webmanifest` dari `public/logo.png`.
+Nama, nomor WhatsApp, email, dan isi formulir tidak dikirim ke analytics. Rancangan dashboard dan langkah validasinya ada di [docs/analytics-dashboard.md](docs/analytics-dashboard.md).
 
-## Catatan Tindak Lanjut Owner
+## Audit kualitas
 
-- **Alamat**: isi `contact.address` di `config/site.ts` (saat ini kosong).
-- **Hero & favicon**: `public/hero.png` dan set favicon diambil dari `public/alief.png`/`public/logo.png`; ganti sumber lalu jalankan ulang `scripts/generate-favicons.mjs` bila logo berubah.
-- **Hymne**: semua item portofolio saat ini berjenis Mars; tambahkan entri `category: 'Hymne'` di `config/portfolio.ts` bila ada karya Hymne (atau perluas `scripts/extract-youtube.mjs`).
+```bash
+npm run generate
+npx serve .output/public -l 3000
+npm run audit:lighthouse
+npm run audit:lighthouse:desktop
+```
+
+Ringkasan hasil dan batasan pengujian tersedia di [reports/lighthouse/README.md](reports/lighthouse/README.md).
+
+## Deploy ke Hostinger
+
+1. Jalankan `npm run generate`.
+2. Upload **seluruh isi** `.output/public/` ke `public_html/`.
+3. Pastikan `.htaccess` ikut terunggah untuk HTTPS, kompresi, cache, dan security headers.
+4. Situs bersifat statis; Node.js tidak dibutuhkan di server.
+
+Sesudah deploy, periksa halaman utama, redirect HTTP ke HTTPS, `sitemap.xml`, `robots.txt`, formulir WhatsApp, dan event GA4 melalui Realtime/DebugView.
+
+## Search Console
+
+1. Tambahkan properti domain `alfproduction.id`.
+2. Verifikasi melalui DNS TXT record.
+3. Submit `https://alfproduction.id/sitemap.xml`.
+4. Minta indexing untuk halaman utama, layanan, portofolio, tentang, cara pemesanan, FAQ, kontak, dan artikel.
+
+## Pemeliharaan konten
+
+- Portofolio YouTube: `node scripts/extract-youtube.mjs` (opsional `--year 2026` atau `--input <file HTML>`).
+- Favicon: `node scripts/generate-favicons.mjs`.
+- Alamat/studio: isi `contact.address` di `config/site.ts`.
+- Portofolio Hymne: tambahkan item berkategori `Hymne` saat karya tersedia.
+
+## Backlog CMS
+
+CMS/dashboard admin sengaja ditempatkan sebagai **prioritas terakhir** karena belum diminta. Implementasikan ketika owner benar-benar membutuhkan edit mandiri dan setelah field, role, workflow publikasi, hosting, serta anggaran pemeliharaan disepakati. Sampai saat itu, perubahan konten dilakukan lewat file konfigurasi dan proses build agar ruang lingkup tetap terkendali.
