@@ -4,7 +4,7 @@ export const SITE_URL = "https://alfproduction.id";
 
 export const brand = {
   name: "ALF Production",
-  tagline: "Spesialis Produksi Mars & Hymne Sekolah",
+  tagline: "Spesialis Produksi Mars & Hymne Lembaga",
   logo: "/images/brand-logo.webp",
 } as const;
 
@@ -70,15 +70,14 @@ export function waLink(message?: string): string {
 }
 
 export const heroStats: string[] = [
-  "80+ Mars Lembaga",
-  "100% Studio Grade",
+  "80+ karya diproduksi",
   "10+ tahun pengalaman",
+  "Musisi aktif & profesional",
 ];
 
 export const whyUs: string[] = [
-  "Fokus pada produksi Mars & Hymne sekolah/lembaga",
-  "Pilihan paket disesuaikan dengan kebutuhan lembaga",
-  "Proses produksi dikerjakan secara terarah",
-  "Layanan mencakup kebutuhan musikal dan produksi audio sesuai paket",
-  "Portofolio karya dapat didengarkan melalui kanal ALF Production.",
+  "80+ karya Mars & Hymne untuk berbagai kebutuhan lembaga",
+  "10+ tahun pengalaman dalam penciptaan dan produksi musik",
+  "Dikerjakan oleh musisi aktif & profesional",
+  "Konsultasi kebutuhan sebelum menentukan paket dan proses produksi",
 ];

@@ -56,7 +56,7 @@ for (const { file, size, background } of icons) {
 const manifest = {
   name: 'ALF Production',
   short_name: 'ALF',
-  description: 'Spesialis Produksi Mars & Hymne Sekolah',
+  description: 'Spesialis Produksi Mars & Hymne Lembaga',
   start_url: '/',
   display: 'standalone',
   background_color: '#ffffff',

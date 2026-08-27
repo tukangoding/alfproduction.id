@@ -30,14 +30,14 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'id' },
-      title: 'Jasa Bikin Mars & Hymne Sekolah / Yayasan | ALF Production',
+      title: 'Spesialis Produksi Mars & Hymne Lembaga | ALF Production',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
           content:
-            'Jasa profesional pembuatan lagu Mars & Hymne khusus Sekolah Islam Terpadu (SIT), Yayasan Pendidikan, & Perguruan Tinggi di Semarang & Jakarta. Audio kualitas studio profesional.'
+            'Produksi Mars & Hymne profesional untuk sekolah, yayasan, pesantren, organisasi, perusahaan, dan instansi di Indonesia.'
         },
         {
           name: 'keywords',

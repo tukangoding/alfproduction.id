@@ -14,7 +14,7 @@ useHead({
     {
       name: 'description',
       content:
-        'Paket pembuatan Mars & Hymne sekolah dan yayasan — GOLD, SILVER, BRONZE. Konsultasi gratis untuk kebutuhan lembaga Anda.'
+        'Paket produksi Mars & Hymne untuk lembaga dan organisasi — GOLD, SILVER, BRONZE. Konsultasi gratis sesuai kebutuhan Anda.'
     },
     {
       name: 'keywords',
@@ -24,7 +24,7 @@ useHead({
     {
       property: 'og:description',
       content:
-        'Paket pembuatan Mars & Hymne sekolah dan yayasan — GOLD, SILVER, BRONZE. Konsultasi gratis untuk kebutuhan lembaga Anda.'
+        'Paket produksi Mars & Hymne untuk lembaga dan organisasi — GOLD, SILVER, BRONZE. Konsultasi gratis sesuai kebutuhan Anda.'
     },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: `${SITE_URL}/layanan` }

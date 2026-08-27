@@ -14,8 +14,8 @@ import { includedServices, servicePackages } from '~/config/services'
           </p>
           <p class="mt-2 text-sm font-medium text-on-surface">{{ brand.tagline }}</p>
           <p class="mt-3 max-w-xs text-sm leading-relaxed text-on-surface-variant">
-            Komposer spesialis lagu Mars &amp; Hymne untuk sekolah, yayasan, dan lembaga — dari
-            lirik hingga audio kualitas studio.
+            Spesialis produksi Mars &amp; Hymne untuk lembaga dan organisasi — dari
+            lirik hingga audio berkualitas studio.
           </p>
         </div>
 

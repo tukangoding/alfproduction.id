@@ -9,7 +9,11 @@ const displayFilters = portfolioFilters.map((filter) =>
   filter === 'Lembaga' ? 'Organisasi' : filter
 )
 
-const activeFilter = ref(displayFilters[0] ?? 'Semua')
+const route = useRoute()
+const requestedFilter = typeof route.query.tipe === 'string' ? route.query.tipe : ''
+const activeFilter = ref(
+  displayFilters.includes(requestedFilter) ? requestedFilter : (displayFilters[0] ?? 'Semua')
+)
 
 const filteredItems = computed(() => {
   const selectedType =
@@ -29,7 +33,7 @@ useHead({
     {
       name: 'description',
       content:
-        'Dengarkan portofolio Mars & Hymne karya ALF Production untuk sekolah dan yayasan. Setiap karya membantu lembaga memiliki identitas yang berkarakter.'
+        'Dengarkan portofolio Mars & Hymne karya ALF Production untuk sekolah, yayasan, pesantren, organisasi, perusahaan, dan instansi.'
     },
     {
       name: 'keywords',
@@ -39,7 +43,7 @@ useHead({
     {
       property: 'og:description',
       content:
-        'Dengarkan portofolio Mars & Hymne karya ALF Production untuk sekolah dan yayasan. Setiap karya membantu lembaga memiliki identitas yang berkarakter.'
+        'Dengarkan portofolio Mars & Hymne karya ALF Production untuk berbagai lembaga dan organisasi di Indonesia.'
     },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: `${SITE_URL}/portofolio` }

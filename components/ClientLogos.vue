@@ -38,8 +38,9 @@ onUnmounted(() => {
     class="mx-auto max-w-6xl border-t border-outline-soft px-4 py-10 sm:px-6"
   >
     <SectionHeading
-      :title="'Dipercaya oleh Lembaga & Institusi di Indonesia'"
-      subtitle="Sekolah, yayasan, dan lembaga di berbagai daerah telah mempercayakan karya Mars &amp; Hymne mereka kepada ALF Production."
+      eyebrow="Kepercayaan Klien"
+      :title="'Dipercaya oleh Berbagai Lembaga di Indonesia'"
+      subtitle="Sekolah, yayasan, pesantren, organisasi, perusahaan, dan instansi di berbagai daerah telah mempercayakan karya mereka kepada ALF Production."
     />
 
     <div

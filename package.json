@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
-  "description": "Jasa Bikin Mars & Hymne Sekolah / Yayasan | ALF Production",
+  "description": "Spesialis Produksi Mars & Hymne Lembaga | ALF Production",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",

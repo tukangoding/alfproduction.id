@@ -28,7 +28,7 @@ export const servicePackages: ServicePackage[] = [
     price: 'Rp 6.500.000',
     description:
       'Cocok untuk lembaga yang membutuhkan layanan produksi secara lebih lengkap, dari penulisan lirik hingga audio akhir.',
-    features: ['Lirik', 'Melodi/Notasi', 'Aransemen', 'Recording vocal', 'Vocalis', 'Mixing & mastering'],
+    features: ['Lirik', 'Melodi', 'Aransemen', 'Recording Vocal', 'Vokalis', 'Mixing & Mastering'],
     featured: true
   },
   {
@@ -37,7 +37,7 @@ export const servicePackages: ServicePackage[] = [
     price: 'Rp 5.500.000',
     description:
       'Untuk lembaga yang telah memiliki lirik dan membutuhkan produksi musik hingga audio akhir.',
-    features: ['Melodi/Notasi', 'Aransemen', 'Recording vocal', 'Vocalis', 'Mixing & mastering'],
+    features: ['Melodi', 'Aransemen', 'Recording Vocal', 'Vokalis', 'Mixing & Mastering'],
     note: 'Lirik disiapkan klien.',
     featured: false
   },
@@ -46,20 +46,20 @@ export const servicePackages: ServicePackage[] = [
     name: 'BRONZE',
     price: 'Rp 3.500.000',
     description:
-      'Untuk lembaga yang telah memiliki lirik serta melodi/notasi dan membutuhkan aransemen hingga audio akhir.',
-    features: ['Aransemen', 'Recording vocal', 'Vocalis', 'Mixing & mastering'],
-    note: 'Lirik & melodi/notasi disiapkan klien.',
+      'Untuk lembaga yang telah memiliki lirik serta melodi dan membutuhkan aransemen hingga audio akhir.',
+    features: ['Aransemen', 'Recording Vocal', 'Vokalis', 'Mixing & Mastering'],
+    note: 'Lirik & melodi disiapkan klien.',
     featured: false
   }
 ]
 
 export const includedServices: string[] = [
   'Lirik',
-  'Melodi/Notasi',
+  'Melodi',
   'Aransemen',
-  'Recording vocal',
-  'Vocalis',
-  'Mixing & mastering'
+  'Recording Vocal',
+  'Vokalis',
+  'Mixing & Mastering'
 ]
 
 export const includedServiceDetails: IncludedServiceDetail[] = [

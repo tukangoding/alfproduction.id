@@ -7,22 +7,22 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Apakah ALF Production hanya menerima pesanan dari sekolah?',
     answer:
-      'Tidak. Layanan dapat ditujukan untuk sekolah, yayasan, pesantren, dan lembaga pendidikan/organisasi yang membutuhkan Mars atau Hymne.'
+      'Tidak. Kami melayani sekolah, yayasan, pesantren, perguruan tinggi, organisasi, perusahaan, instansi, dan lembaga lain yang membutuhkan Mars atau Hymne.'
   },
   {
     question: 'Apakah bisa membuat Mars dari nol?',
     answer:
-      'Bisa. Paket Gold mencakup lirik, melodi/notasi, aransemen, recording vocal, vocalis, serta mixing & mastering.'
+      'Bisa. Paket Gold mencakup lirik, melodi, aransemen, Recording Vocal, Vokalis, serta Mixing & Mastering.'
   },
   {
     question: 'Kalau kami sudah punya lirik?',
     answer:
-      'Bisa. Paket Silver mencakup melodi/notasi, aransemen, recording vocal, vocalis, serta mixing & mastering. Lirik disiapkan klien.'
+      'Bisa. Paket Silver mencakup melodi, aransemen, Recording Vocal, Vokalis, serta Mixing & Mastering. Lirik disiapkan klien.'
   },
   {
-    question: 'Kalau kami sudah punya lirik dan melodi/notasi?',
+    question: 'Kalau kami sudah punya lirik dan melodi?',
     answer:
-      'Bisa. Paket Bronze mencakup aransemen, recording vocal, vocalis, serta mixing & mastering. Lirik dan melodi/notasi disiapkan klien.'
+      'Bisa. Paket Bronze mencakup aransemen, Recording Vocal, Vokalis, serta Mixing & Mastering. Lirik dan melodi disiapkan klien.'
   },
   {
     question: 'Bisa konsultasi sebelum memilih paket?',
@@ -33,5 +33,10 @@ export const faqItems: FaqItem[] = [
     question: 'Bagaimana cara memesan?',
     answer:
       'Hubungi ALF Production melalui WhatsApp atau formulir pemesanan di website. Sampaikan kebutuhan lembaga, lalu tim akan membantu mengarahkan prosesnya.'
+  },
+  {
+    question: 'Apakah bisa memperbaiki Mars yang sudah ada?',
+    answer:
+      'Bisa dikonsultasikan terlebih dahulu. Kami akan mempelajari materi yang sudah ada dan membantu menentukan kebutuhan pengembangannya.'
   }
 ]

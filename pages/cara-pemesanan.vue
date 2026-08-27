@@ -60,7 +60,7 @@ useHead({
         to="/kontak#pesan"
         class="md-elevated-1 inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-on transition-transform hover:scale-105"
       >
-        Pesan Sekarang
+        Mulai Konsultasi Gratis
       </NuxtLink>
     </div>
   </section>
