@@ -7,6 +7,22 @@ const outDir = path.resolve('public')
 
 const transparent = { r: 0, g: 0, b: 0, alpha: 0 }
 const white = { r: 255, g: 255, b: 255, alpha: 1 }
+const trimmedLogo = await sharp(src)
+  .trim({ background: transparent })
+  .png()
+  .toBuffer({ resolveWithObject: true })
+
+// Favicon memakai simbol "A" agar identitas merek tetap terbaca pada 16–32 px.
+const markSource = await sharp(trimmedLogo.data)
+  .extract({
+    left: 0,
+    top: 0,
+    width: Math.round(trimmedLogo.info.width * 0.36),
+    height: Math.round(trimmedLogo.info.height * 0.72)
+  })
+  .trim({ background: transparent })
+  .png()
+  .toBuffer()
 
 const icons = [
   { file: 'favicon-16x16.png', size: 16, background: transparent },
@@ -17,8 +33,21 @@ const icons = [
 ]
 
 for (const { file, size, background } of icons) {
-  await sharp(src)
-    .resize(size, size, { fit: 'contain', background })
+  const padding = Math.max(1, Math.round(size * 0.08))
+
+  await sharp(markSource)
+    .resize(size - padding * 2, size - padding * 2, {
+      fit: 'contain',
+      background
+    })
+    .extend({
+      top: padding,
+      bottom: padding,
+      left: padding,
+      right: padding,
+      background
+    })
+    .flatten({ background })
     .png()
     .toFile(path.join(outDir, file))
   console.log('generated', file)

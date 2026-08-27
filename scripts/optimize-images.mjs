@@ -36,7 +36,8 @@ await sharp(heroSource)
 
 await Promise.all([
   sharp(path.join(publicDir, 'logo.png'))
-    .resize(220, 220, { fit: 'inside', withoutEnlargement: true })
+    .trim({ background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .resize({ width: 320, fit: 'inside', withoutEnlargement: true })
     .webp({ quality: 82, effort: 6, alphaQuality: 90 })
     .toFile(path.join(imageDir, 'brand-logo.webp')),
   sharp(path.join(publicDir, 'alief.png'))

@@ -44,20 +44,20 @@ function onKeydown(event: KeyboardEvent) {
     class="sticky top-0 z-50 border-b border-outline-soft bg-white"
   >
     <div
-      class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
+      class="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
     >
-      <NuxtLink to="/" class="flex items-center gap-2">
+      <NuxtLink to="/" class="flex min-h-11 shrink-0 items-center">
         <img
           :src="brand.logo"
           :alt="brand.name"
-          width="64"
-          height="64"
-          class="h-14 w-auto object-contain"
+          width="320"
+          height="128"
+          class="h-14 w-auto object-contain sm:h-16"
         />
       </NuxtLink>
 
       <nav
-        class="hidden items-center gap-6 md:flex"
+        class="hidden items-center gap-5 xl:flex xl:gap-6"
         aria-label="Navigasi utama"
       >
         <NuxtLink
@@ -90,14 +90,14 @@ function onKeydown(event: KeyboardEvent) {
           :href="waLink()"
           target="_blank"
           rel="noopener"
-          class="md-elevated-1 hidden items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-on transition-transform hover:scale-105 sm:inline-flex"
+          class="md-elevated-1 hidden items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-on transition-transform hover:scale-105 md:inline-flex"
         >
           Konsultasi Gratis
         </a>
 
         <button
           type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high md:hidden"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high xl:hidden"
           :aria-expanded="menuOpen"
           aria-controls="mobile-nav"
           aria-label="Menu"
@@ -125,7 +125,7 @@ function onKeydown(event: KeyboardEvent) {
       <div
         v-if="menuOpen"
         id="mobile-nav"
-        class="overflow-hidden border-t border-outline-soft bg-white shadow-lg md:hidden"
+        class="overflow-hidden border-t border-outline-soft bg-white shadow-lg xl:hidden"
       >
         <nav
           class="mx-auto max-w-6xl px-4 py-4 sm:px-6"

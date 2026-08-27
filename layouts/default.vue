@@ -1,6 +1,6 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <LazyAppHeader hydrate-on-interaction />
+    <AppHeader />
     <main class="flex-1">
       <slot />
     </main>
