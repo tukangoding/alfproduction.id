@@ -50,9 +50,9 @@ function onKeydown(event: KeyboardEvent) {
         <img
           :src="brand.logo"
           :alt="brand.name"
-          width="64"
-          height="64"
-          class="h-14 w-auto object-contain"
+          width="128"
+          height="128"
+          class="w-20 object-contain sm:w-24"
         />
       </NuxtLink>
 
