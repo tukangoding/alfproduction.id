@@ -46,13 +46,13 @@ function onKeydown(event: KeyboardEvent) {
     <div
       class="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
     >
-      <NuxtLink to="/" class="flex min-h-11 shrink-0 items-center">
+      <NuxtLink to="/" class="flex items-center gap-2">
         <img
           :src="brand.logo"
           :alt="brand.name"
-          width="320"
-          height="128"
-          class="h-14 w-auto object-contain sm:h-16"
+          width="64"
+          height="64"
+          class="h-14 w-auto object-contain"
         />
       </NuxtLink>
 
