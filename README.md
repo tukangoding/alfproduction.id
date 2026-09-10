@@ -16,13 +16,23 @@ Hasil static generation berada di `.output/public/`.
 
 ## Optimasi gambar
 
-Gambar sumber disimpan di `assets/hero.png`, `public/alief.png`, dan `public/logo-klien/`. Bangkitkan ulang varian AVIF/WebP/JPEG setelah sumber berubah:
+Gambar sumber disimpan di `public/hero.jpg`, `public/alief.png`, dan `public/logo-klien/`. Bangkitkan ulang varian AVIF/WebP/JPEG setelah sumber berubah:
 
 ```bash
 npm run optimize:images
 ```
 
 Jalankan `npm run generate` setelahnya. Jangan menghapus gambar sumber karena script optimasi membutuhkannya.
+
+Preview tautan untuk Instagram, Facebook, WhatsApp, dan platform sosial lain berada di
+`public/alf-production-social-v1.jpg`. Bangkitkan ulang dari logo sumber dengan:
+
+```bash
+npm run generate:social-preview
+```
+
+Jika desain preview diganti lagi, gunakan nama file versi baru dan perbarui URL-nya di
+`nuxt.config.ts` agar cache crawler sosial tidak terus memakai gambar lama.
 
 ## Google Analytics 4
 

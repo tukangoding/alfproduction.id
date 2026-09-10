@@ -11,7 +11,7 @@ const articleSchema = {
     'Panduan Menulis & Contoh Lirik Mars Sekolah yang Menggugah Semangat',
   description:
     'Panduan lengkap menulis lirik mars sekolah beserta contoh siap adaptasi untuk sekolah umum maupun Islam terpadu.',
-  image: `${SITE_URL}/og-cover.jpg`,
+  image: `${SITE_URL}/alf-production-social-v1.jpg`,
   inLanguage: 'id-ID',
   author: { '@type': 'Organization', name: 'ALF Production', url: SITE_URL },
   publisher: {

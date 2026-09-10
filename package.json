@@ -12,6 +12,7 @@
     "postinstall": "nuxt prepare",
     "test": "vitest run",
     "typecheck": "nuxt typecheck",
+    "generate:social-preview": "node scripts/generate-social-preview.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
     "audit:lighthouse": "lighthouse http://127.0.0.1:3000/ --chrome-path=/usr/bin/google-chrome --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' --output=html --output=json --output-path=reports/lighthouse/latest-mobile",
     "audit:lighthouse:desktop": "lighthouse http://127.0.0.1:3000/ --chrome-path=/usr/bin/google-chrome --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' --preset=desktop --output=html --output=json --output-path=reports/lighthouse/latest-desktop"

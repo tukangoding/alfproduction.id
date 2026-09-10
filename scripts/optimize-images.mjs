@@ -13,7 +13,7 @@ await Promise.all([
   mkdir(clientOutputDir, { recursive: true })
 ])
 
-const heroSource = path.join(root, 'assets', 'hero.png')
+const heroSource = path.join(publicDir, 'hero.jpg')
 const heroWidths = [480, 800, 1200]
 
 await Promise.all(
