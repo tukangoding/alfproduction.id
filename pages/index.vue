@@ -9,9 +9,14 @@ import {
   servicePackages
 } from '~/config/services'
 import { pageKeywords } from '~/config/seo'
+import { trackAnalyticsEvent } from '~/composables/useAnalytics'
 
 const textLinkClass =
   'inline-flex min-h-11 items-center gap-1.5 px-2 text-sm font-semibold text-primary-strong transition-colors hover:underline hover:decoration-primary-strong hover:underline-offset-4'
+
+function trackEducationPriceInterest() {
+  trackAnalyticsEvent('education_price_interest', { page_path: '/' })
+}
 
 const institutionNeeds = [
   {
@@ -113,6 +118,17 @@ useHead({
             >
               Dengarkan Portofolio
             </NuxtLink>
+          </div>
+
+          <div class="mt-4 flex flex-wrap items-center gap-x-1 text-sm text-on-surface-variant">
+            <span>Mewakili lembaga pendidikan Islam—sekolah, yayasan, atau pesantren?</span>
+            <a
+              href="#harga-khusus-pendidikan"
+              class="inline-flex min-h-11 items-center font-semibold text-primary-strong hover:underline hover:underline-offset-4"
+              @click="trackEducationPriceInterest"
+            >
+              Lihat harga khusus →
+            </a>
           </div>
 
           <ul class="mt-12 flex flex-wrap items-center gap-x-10 gap-y-3 border-t border-outline-soft pt-6 md:mt-14">
@@ -264,6 +280,37 @@ useHead({
         :after-sales-summary="afterSalesSummary"
       />
     </div>
+    <aside
+      id="harga-khusus-pendidikan"
+      aria-labelledby="islamic-education-price-title"
+      class="mt-7 flex flex-col gap-5 rounded-md-large border border-outline-soft bg-primary-container p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+    >
+      <div class="max-w-3xl">
+        <p
+          id="islamic-education-price-title"
+          class="text-sm font-bold uppercase tracking-wider text-primary-strong"
+        >
+          Harga Khusus Lembaga Pendidikan Islam
+        </p>
+        <p class="mt-2 text-sm leading-relaxed text-primary-on-container">
+          Dapatkan <strong class="font-semibold">Harga Khusus</strong> untuk
+          sekolah, yayasan, pesantren, dan lembaga pendidikan Islam yang ingin memiliki karya
+          profesional sebagai identitas dan kebanggaan lembaga.
+        </p>
+        <p class="mt-2 text-sm leading-relaxed text-primary-on-container">
+          Konsultasikan kebutuhan Anda secara gratis.
+        </p>
+      </div>
+      <a
+        :href="waLink('Halo ALF Production, saya dari lembaga pendidikan Islam dan ingin berkonsultasi mengenai harga khusus produksi Mars/Hymne.')"
+        data-cta-context="islamic_education_price"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-outline bg-surface-container px-6 py-3 text-sm font-semibold text-on-surface transition-colors hover:bg-surface-container-high"
+      >
+        Konsultasi Gratis
+      </a>
+    </aside>
     <p class="mx-auto mt-7 max-w-2xl text-center text-sm leading-relaxed text-on-surface-variant">
       <strong class="text-on-surface">Belum yakin memilih paket? Tidak masalah.</strong>
       Konsultasikan kebutuhan lembaga Anda terlebih dahulu. Kami akan membantu mengarahkan pilihan yang sesuai.

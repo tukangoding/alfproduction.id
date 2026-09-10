@@ -48,7 +48,8 @@ export default defineNuxtPlugin(() => {
     trackAnalyticsEvent('whatsapp_click', {
       cta_text: link.textContent?.trim().replace(/\s+/g, ' ').slice(0, 80) || 'WhatsApp',
       page_path: window.location.pathname,
-      package_id: link.dataset.packageId
+      package_id: link.dataset.packageId,
+      cta_context: link.dataset.ctaContext
     })
   })
 })
